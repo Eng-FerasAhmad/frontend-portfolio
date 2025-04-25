@@ -1,10 +1,11 @@
-
 import React from 'react';
+import Timeline from '../components/Timeline';
 
 const About = () => {
   return (
-    <div className="min-h-screen pt-20 flex items-center justify-center">
-      <div className="max-w-4xl w-full px-6">
+    <div className="min-h-screen pt-20">
+      <div className="max-w-4xl w-full px-6 mx-auto">
+        {/* Keep existing grid section with image and intro */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image section */}
           <div className="relative">
@@ -36,6 +37,9 @@ const About = () => {
             </div>
           </div>
         </div>
+        
+        {/* Add Timeline component */}
+        <Timeline />
       </div>
     </div>
   );
