@@ -1,8 +1,10 @@
 
+import React from 'react';
+
 const About = () => {
   return (
-    <div className="min-h-screen pt-20">
-      <div className="max-w-4xl mx-auto px-6">
+    <div className="min-h-screen pt-20 flex items-center justify-center">
+      <div className="max-w-4xl w-full px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image section */}
           <div className="relative">
