@@ -1,10 +1,10 @@
 
 import { 
   BrainCircuit, Palette, Wrench, Beaker, GraduationCap, Sparkles,
-  Code2, FileCode, React, Server, Python, Scaling,
+  Code2, FileCode, Activity, Server, Binary, Scaling,
   Paintbrush, Figma, Smartphone, Brush, Waves, PenTool,
-  Container, GitBranch, Cloud, Package, Zap, Git,
-  TestTube, Waypoints, Target, Blocks, Binary, ClipboardCheck,
+  Container, GitBranch, Cloud, Package, Zap, Gift,
+  TestTube, Waypoints, Target, Blocks, Diamond, ClipboardCheck,
   Users, Eye, HandHelping, BookOpen, UserRound, Workflow,
   Bot, Baseline, Network, AppWindow, Component, Gauge
 } from "lucide-react";
@@ -19,9 +19,9 @@ const Skills = () => {
       skills: [
         { name: "JavaScript", icon: Code2 },
         { name: "TypeScript", icon: FileCode },
-        { name: "React", icon: React },
+        { name: "React", icon: Activity },
         { name: "Node.js", icon: Server },
-        { name: "Python", icon: Python },
+        { name: "Python", icon: Binary },
         { name: "REST APIs", icon: Scaling }
       ]
     },
@@ -48,7 +48,7 @@ const Skills = () => {
         { name: "AWS", icon: Cloud },
         { name: "Webpack", icon: Package },
         { name: "Vite", icon: Zap },
-        { name: "Git", icon: Git }
+        { name: "Git", icon: Gift }
       ]
     },
     {
@@ -60,7 +60,7 @@ const Skills = () => {
         { name: "React Testing Library", icon: Waypoints },
         { name: "Cypress", icon: Target },
         { name: "Unit Testing", icon: Blocks },
-        { name: "E2E Testing", icon: Binary },
+        { name: "E2E Testing", icon: Diamond },
         { name: "TDD", icon: ClipboardCheck }
       ]
     },
