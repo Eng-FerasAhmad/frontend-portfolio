@@ -90,23 +90,26 @@ const Skills = () => {
         <h1 className="text-3xl font-bold mb-8 text-gradient">My Skills</h1>
         <div className="grid gap-8">
           {skillSections.map((section) => (
-            <Card key={section.title} className="border border-primary/20 bg-card hover:border-primary/40 transition-colors">
-              <div className="grid md:grid-cols-[200px,1fr] gap-4">
-                <CardHeader className="md:border-r border-primary/10">
+            <Card key={section.title} className="bg-card shadow-none hover:bg-secondary/5 transition-colors">
+              <div className="flex flex-col">
+                <CardHeader className="border-b border-primary/5 pb-6">
                   <div className="flex items-center gap-3">
-                    <div className="rounded-lg bg-primary/10 p-2">
+                    <div className="rounded-lg bg-primary/5 p-2">
                       <section.icon className="w-6 h-6 text-primary" />
                     </div>
                     <CardTitle>{section.title}</CardTitle>
                   </div>
-                  <p className="text-sm text-muted-foreground mt-2">{section.description}</p>
+                  <p className="text-sm text-muted-foreground mt-2 w-full">{section.description}</p>
                 </CardHeader>
-                <CardContent className="pt-6 md:pt-0">
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <CardContent className="pt-6">
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                     {section.skills.map((skill) => (
-                      <div key={skill.name} className="flex items-center gap-2 text-foreground/80">
+                      <div 
+                        key={skill.name} 
+                        className="flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors"
+                      >
                         <span className="text-xl">{skill.icon}</span>
-                        <span>{skill.name}</span>
+                        <span className="text-sm">{skill.name}</span>
                       </div>
                     ))}
                   </div>
