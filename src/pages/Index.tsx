@@ -1,4 +1,7 @@
 
+import Navigation from "../components/Navigation";
+import Hero from "../components/Hero";
+
 const Index = () => {
   return (
     <div className="bg-navy dark:bg-navy min-h-screen text-white dark:text-white">
