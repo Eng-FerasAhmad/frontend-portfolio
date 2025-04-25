@@ -90,9 +90,12 @@ const Skills = () => {
         <h1 className="text-3xl font-bold mb-12 text-gradient">My Skills</h1>
         <div className="grid gap-12">
           {skillSections.map((section) => (
-            <Card key={section.title} className="bg-transparent shadow-none space-y-6">
+            <Card 
+              key={section.title} 
+              className="bg-transparent border-none shadow-none space-y-6"
+            >
               <div className="flex flex-col">
-                <CardHeader className="pb-8">
+                <CardHeader className="pb-8 px-0">
                   <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-primary/5 p-2">
                       <section.icon className="w-7 h-7 text-primary" />
@@ -101,7 +104,7 @@ const Skills = () => {
                   </div>
                   <p className="text-sm text-gray-400 mt-4 w-full">{section.description}</p>
                 </CardHeader>
-                <CardContent className="pt-8">
+                <CardContent className="pt-8 px-0">
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                     {section.skills.map((skill) => (
                       <div 
