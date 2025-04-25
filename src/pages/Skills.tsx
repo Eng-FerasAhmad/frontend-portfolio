@@ -1,5 +1,5 @@
 
-import { Book, Code, TestTube, User, Hammer, Paintbrush } from "lucide-react";
+import { Code, Hammer, Paintbrush, Book, User, TestTube } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Skills = () => {
@@ -90,16 +90,16 @@ const Skills = () => {
         <h1 className="text-3xl font-bold mb-8 text-gradient">My Skills</h1>
         <div className="grid gap-8">
           {skillSections.map((section) => (
-            <Card key={section.title} className="bg-card shadow-none hover:bg-secondary/5 transition-colors">
+            <Card key={section.title} className="bg-transparent shadow-none">
               <div className="flex flex-col">
-                <CardHeader className="border-b border-primary/5 pb-6">
+                <CardHeader className="pb-6">
                   <div className="flex items-center gap-3">
                     <div className="rounded-lg bg-primary/5 p-2">
                       <section.icon className="w-6 h-6 text-primary" />
                     </div>
                     <CardTitle>{section.title}</CardTitle>
                   </div>
-                  <p className="text-sm text-muted-foreground mt-2 w-full">{section.description}</p>
+                  <p className="text-sm text-gray-400 mt-2 w-full">{section.description}</p>
                 </CardHeader>
                 <CardContent className="pt-6">
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
