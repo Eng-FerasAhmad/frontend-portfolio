@@ -1,5 +1,13 @@
 
-import { Code, Hammer, Paintbrush, Book, User, TestTube, BrainCircuit, Palette, Wrench, Beaker, GraduationCap, Sparkles } from "lucide-react";
+import { 
+  BrainCircuit, Palette, Wrench, Beaker, GraduationCap, Sparkles,
+  Code2, FileCode, React, Server, Python, Scaling,
+  Paintbrush, Figma, Smartphone, Brush, Waves, PenTool,
+  Container, GitBranch, Cloud, Package, Zap, Git,
+  TestTube, Waypoints, Target, Blocks, Binary, ClipboardCheck,
+  Users, Eye, HandHelping, BookOpen, UserRound, Workflow,
+  Bot, Baseline, Network, AppWindow, Component, Gauge
+} from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Skills = () => {
@@ -9,12 +17,12 @@ const Skills = () => {
       icon: BrainCircuit,
       description: "Experienced in modern web development with a focus on front-end technologies and responsive design.",
       skills: [
-        { name: "JavaScript", icon: "⚡" },
-        { name: "TypeScript", icon: "📘" },
-        { name: "React", icon: "⚛️" },
-        { name: "Node.js", icon: "🟩" },
-        { name: "Python", icon: "🐍" },
-        { name: "REST APIs", icon: "🔌" }
+        { name: "JavaScript", icon: Code2 },
+        { name: "TypeScript", icon: FileCode },
+        { name: "React", icon: React },
+        { name: "Node.js", icon: Server },
+        { name: "Python", icon: Python },
+        { name: "REST APIs", icon: Scaling }
       ]
     },
     {
@@ -22,12 +30,12 @@ const Skills = () => {
       icon: Palette,
       description: "Creating beautiful and intuitive user interfaces with modern design principles and tools.",
       skills: [
-        { name: "UI/UX Design", icon: "🎨" },
-        { name: "Figma", icon: "🖌️" },
-        { name: "Responsive Design", icon: "📱" },
-        { name: "CSS/SCSS", icon: "💅" },
-        { name: "Tailwind CSS", icon: "🌊" },
-        { name: "Design Systems", icon: "🎯" }
+        { name: "UI/UX Design", icon: Paintbrush },
+        { name: "Figma", icon: Figma },
+        { name: "Responsive Design", icon: Smartphone },
+        { name: "CSS/SCSS", icon: Brush },
+        { name: "Tailwind CSS", icon: Waves },
+        { name: "Design Systems", icon: PenTool }
       ]
     },
     {
@@ -35,12 +43,12 @@ const Skills = () => {
       icon: Wrench,
       description: "Expertise in DevOps and deployment tools to build scalable applications.",
       skills: [
-        { name: "Docker", icon: "🐋" },
-        { name: "CI/CD", icon: "⚙️" },
-        { name: "AWS", icon: "☁️" },
-        { name: "Webpack", icon: "📦" },
-        { name: "Vite", icon: "⚡" },
-        { name: "Git", icon: "🔄" }
+        { name: "Docker", icon: Container },
+        { name: "CI/CD", icon: GitBranch },
+        { name: "AWS", icon: Cloud },
+        { name: "Webpack", icon: Package },
+        { name: "Vite", icon: Zap },
+        { name: "Git", icon: Git }
       ]
     },
     {
@@ -48,12 +56,12 @@ const Skills = () => {
       icon: Beaker,
       description: "Ensuring code quality through comprehensive testing methodologies.",
       skills: [
-        { name: "Jest", icon: "🃏" },
-        { name: "React Testing Library", icon: "🔍" },
-        { name: "Cypress", icon: "🎯" },
-        { name: "Unit Testing", icon: "⚡" },
-        { name: "E2E Testing", icon: "🔄" },
-        { name: "TDD", icon: "📝" }
+        { name: "Jest", icon: TestTube },
+        { name: "React Testing Library", icon: Waypoints },
+        { name: "Cypress", icon: Target },
+        { name: "Unit Testing", icon: Blocks },
+        { name: "E2E Testing", icon: Binary },
+        { name: "TDD", icon: ClipboardCheck }
       ]
     },
     {
@@ -61,12 +69,12 @@ const Skills = () => {
       icon: GraduationCap,
       description: "Passionate about sharing knowledge and helping others grow in their tech journey.",
       skills: [
-        { name: "Technical Workshops", icon: "👨‍🏫" },
-        { name: "Code Reviews", icon: "👀" },
-        { name: "Mentoring", icon: "🤝" },
-        { name: "Documentation", icon: "📚" },
-        { name: "Team Leadership", icon: "👥" },
-        { name: "Agile Practices", icon: "🔄" }
+        { name: "Technical Workshops", icon: Users },
+        { name: "Code Reviews", icon: Eye },
+        { name: "Mentoring", icon: HandHelping },
+        { name: "Documentation", icon: BookOpen },
+        { name: "Team Leadership", icon: UserRound },
+        { name: "Agile Practices", icon: Workflow }
       ]
     },
     {
@@ -74,12 +82,12 @@ const Skills = () => {
       icon: Sparkles,
       description: "Continuously expanding knowledge in emerging technologies and best practices.",
       skills: [
-        { name: "AI/ML", icon: "🤖" },
-        { name: "Web3", icon: "⛓️" },
-        { name: "Cloud Architecture", icon: "☁️" },
-        { name: "Mobile Development", icon: "📱" },
-        { name: "System Design", icon: "🏗️" },
-        { name: "Performance Optimization", icon: "⚡" }
+        { name: "AI/ML", icon: Bot },
+        { name: "Web3", icon: Baseline },
+        { name: "Cloud Architecture", icon: Network },
+        { name: "Mobile Development", icon: AppWindow },
+        { name: "System Design", icon: Component },
+        { name: "Performance Optimization", icon: Gauge }
       ]
     }
   ];
@@ -111,7 +119,7 @@ const Skills = () => {
                         key={skill.name} 
                         className="flex items-center gap-3 text-gray-500 hover:text-gray-700 transition-colors"
                       >
-                        <span className="text-xl">{skill.icon}</span>
+                        <skill.icon className="w-5 h-5" />
                         <span className="text-sm">{skill.name}</span>
                       </div>
                     ))}
