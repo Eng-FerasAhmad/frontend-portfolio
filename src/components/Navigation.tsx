@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { Book, Briefcase, Mail, Menu, User, Globe } from 'lucide-react';
+import { Book, Briefcase, Mail, Menu, User, Globe, FileText } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -22,7 +21,6 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { t, i18n } = useTranslation();
 
-  // Handle scroll effect
   if (typeof window !== 'undefined') {
     window.addEventListener('scroll', () => {
       setIsScrolled(window.scrollY > 20);
@@ -33,6 +31,7 @@ const Navigation = () => {
     { label: t('nav.about'), to: '/about', icon: User },
     { label: t('nav.skills'), to: '/skills', icon: Book },
     { label: t('nav.projects'), to: '/projects', icon: Briefcase },
+    { label: t('nav.blog'), to: '/blog', icon: FileText },
     { label: t('nav.contact'), to: '/contact', icon: Mail },
   ];
 
@@ -76,12 +75,10 @@ const Navigation = () => {
           {t('nav.portfolio')}
         </Link>
         
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           <NavLinks />
         </div>
 
-        {/* Mobile Navigation */}
         <div className="md:hidden">
           <Drawer>
             <DrawerTrigger asChild>
