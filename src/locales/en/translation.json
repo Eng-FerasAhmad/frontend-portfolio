@@ -1,0 +1,16 @@
+
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "portfolio": "Portfolio"
+  },
+  "hero": {
+    "title": "Senior Frontend Engineer",
+    "subtitle": "Crafting exceptional web experiences with modern technologies",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me"
+  }
+}

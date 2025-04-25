@@ -1,10 +1,18 @@
 
 import { useState } from 'react';
-import { Book, Briefcase, Mail, User } from 'lucide-react';
+import { Book, Briefcase, Mail, User, Globe } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
+import { useTranslation } from 'react-i18next';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t, i18n } = useTranslation();
 
   // Handle scroll effect
   if (typeof window !== 'undefined') {
@@ -14,17 +22,21 @@ const Navigation = () => {
   }
 
   const navItems = [
-    { label: 'About', href: '#about', icon: User },
-    { label: 'Skills', href: '#skills', icon: Book },
-    { label: 'Projects', href: '#projects', icon: Briefcase },
-    { label: 'Contact', href: '#contact', icon: Mail },
+    { label: t('nav.about'), href: '#about', icon: User },
+    { label: t('nav.skills'), href: '#skills', icon: Book },
+    { label: t('nav.projects'), href: '#projects', icon: Briefcase },
+    { label: t('nav.contact'), href: '#contact', icon: Mail },
   ];
+
+  const changeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+  };
 
   return (
     <nav className={`fixed top-0 w-full z-50 ${isScrolled ? 'bg-background/90 dark:bg-navy/90 backdrop-blur-md py-4' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a href="#" className="text-foreground dark:text-white font-bold text-xl">
-          Portfolio
+          {t('nav.portfolio')}
         </a>
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
@@ -37,6 +49,19 @@ const Navigation = () => {
               {item.label}
             </a>
           ))}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="text-foreground/80 dark:text-white/80 hover:text-foreground dark:hover:text-white flex items-center gap-2">
+              <Globe className="w-4 h-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem onClick={() => changeLanguage('en')}>
+                English
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => changeLanguage('de')}>
+                Deutsch
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <ThemeToggle />
         </div>
       </div>
