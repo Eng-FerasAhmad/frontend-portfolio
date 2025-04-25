@@ -1,7 +1,11 @@
+
 import React from 'react';
 import Timeline from '../components/Timeline';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const About = () => {
+  useScrollAnimation();
+
   return (
     <div className="min-h-screen pt-20">
       <div className="max-w-4xl w-full px-6 mx-auto">
