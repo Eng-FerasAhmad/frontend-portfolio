@@ -1,12 +1,12 @@
 
-import { Code, Hammer, Paintbrush, Book, User, TestTube } from "lucide-react";
+import { Code, Hammer, Paintbrush, Book, User, TestTube, BrainCircuit, Palette, Wrench, Beaker, GraduationCap, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Skills = () => {
   const skillSections = [
     {
       title: "Developer",
-      icon: Code,
+      icon: BrainCircuit,
       description: "Experienced in modern web development with a focus on front-end technologies and responsive design.",
       skills: [
         { name: "JavaScript", icon: "⚡" },
@@ -19,7 +19,7 @@ const Skills = () => {
     },
     {
       title: "Design",
-      icon: Paintbrush,
+      icon: Palette,
       description: "Creating beautiful and intuitive user interfaces with modern design principles and tools.",
       skills: [
         { name: "UI/UX Design", icon: "🎨" },
@@ -32,7 +32,7 @@ const Skills = () => {
     },
     {
       title: "Build",
-      icon: Hammer,
+      icon: Wrench,
       description: "Expertise in DevOps and deployment tools to build scalable applications.",
       skills: [
         { name: "Docker", icon: "🐋" },
@@ -45,7 +45,7 @@ const Skills = () => {
     },
     {
       title: "Testing",
-      icon: TestTube,
+      icon: Beaker,
       description: "Ensuring code quality through comprehensive testing methodologies.",
       skills: [
         { name: "Jest", icon: "🃏" },
@@ -58,7 +58,7 @@ const Skills = () => {
     },
     {
       title: "Trainer",
-      icon: User,
+      icon: GraduationCap,
       description: "Passionate about sharing knowledge and helping others grow in their tech journey.",
       skills: [
         { name: "Technical Workshops", icon: "👨‍🏫" },
@@ -71,7 +71,7 @@ const Skills = () => {
     },
     {
       title: "Learning",
-      icon: Book,
+      icon: Sparkles,
       description: "Continuously expanding knowledge in emerging technologies and best practices.",
       skills: [
         { name: "AI/ML", icon: "🤖" },
