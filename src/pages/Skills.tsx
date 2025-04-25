@@ -1,4 +1,6 @@
 
+import Navigation from "../components/Navigation";
+
 const Skills = () => {
   return (
     <div className="min-h-screen pt-20 px-6">
