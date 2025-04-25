@@ -87,26 +87,26 @@ const Skills = () => {
   return (
     <div className="min-h-screen pt-20 px-6">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 text-gradient">My Skills</h1>
-        <div className="grid gap-8">
+        <h1 className="text-3xl font-bold mb-12 text-gradient">My Skills</h1>
+        <div className="grid gap-12">
           {skillSections.map((section) => (
-            <Card key={section.title} className="bg-transparent shadow-none">
+            <Card key={section.title} className="bg-transparent shadow-none space-y-6">
               <div className="flex flex-col">
-                <CardHeader className="pb-6">
-                  <div className="flex items-center gap-3">
+                <CardHeader className="pb-8">
+                  <div className="flex items-center gap-4">
                     <div className="rounded-lg bg-primary/5 p-2">
-                      <section.icon className="w-6 h-6 text-primary" />
+                      <section.icon className="w-7 h-7 text-primary" />
                     </div>
-                    <CardTitle>{section.title}</CardTitle>
+                    <CardTitle className="text-2xl">{section.title}</CardTitle>
                   </div>
-                  <p className="text-sm text-gray-400 mt-2 w-full">{section.description}</p>
+                  <p className="text-sm text-gray-400 mt-4 w-full">{section.description}</p>
                 </CardHeader>
-                <CardContent className="pt-6">
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <CardContent className="pt-8">
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                     {section.skills.map((skill) => (
                       <div 
                         key={skill.name} 
-                        className="flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors"
+                        className="flex items-center gap-3 text-gray-500 hover:text-gray-700 transition-colors"
                       >
                         <span className="text-xl">{skill.icon}</span>
                         <span className="text-sm">{skill.name}</span>
