@@ -23,8 +23,14 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: {
+          DEFAULT: "#FFFFFF",
+          dark: "#1A1F2C"
+        },
+        foreground: {
+          DEFAULT: "#000000",
+          dark: "#FFFFFF"
+        },
         primary: {
           DEFAULT: "#8B5CF6",
           foreground: "#FFFFFF",
@@ -34,8 +40,9 @@ export default {
           foreground: "#FFFFFF",
         },
         navy: {
+          light: "#F0F4F8",
           DEFAULT: "#1A1F2C",
-          light: "#2A2F3C",
+          dark: "#0F1628"
         },
       },
       fontFamily: {
@@ -60,3 +67,4 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
