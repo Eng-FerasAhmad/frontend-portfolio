@@ -1,5 +1,5 @@
 
-import { Book, Code, TestTube, User, Build, Design } from "lucide-react";
+import { Book, Code, TestTube, User, Hammer, Paintbrush } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Skills = () => {
@@ -11,12 +11,12 @@ const Skills = () => {
     },
     {
       title: "Design",
-      icon: Design,
+      icon: Paintbrush,
       skills: ["UI/UX Design", "Figma", "Responsive Design", "CSS/SCSS", "Tailwind CSS", "Design Systems"]
     },
     {
       title: "Build",
-      icon: Build,
+      icon: Hammer,
       skills: ["Docker", "CI/CD", "AWS", "Webpack", "Vite", "Git"]
     },
     {
