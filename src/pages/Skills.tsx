@@ -1,3 +1,4 @@
+
 import { 
   BrainCircuit, Palette, Wrench, Beaker, GraduationCap, Sparkles,
   Code2, FileCode, Activity, Server, Diamond, Scaling,
@@ -9,6 +10,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import BackgroundDecoration from "@/components/BackgroundDecoration";
 
 const Skills = () => {
   const skillSections = [
@@ -99,8 +101,9 @@ const Skills = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen pt-20 px-6 relative overflow-hidden">
+      <BackgroundDecoration />
+      <div className="max-w-6xl mx-auto relative">
         <h1 className="text-3xl font-bold mb-12 text-gradient">My Skills</h1>
         <div className="grid gap-12">
           {skillSections.map((section) => (
