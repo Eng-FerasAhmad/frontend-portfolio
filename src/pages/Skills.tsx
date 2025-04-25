@@ -1,3 +1,4 @@
+
 import { 
   BrainCircuit, Palette, Wrench, Beaker, GraduationCap, Sparkles,
   Code2, FileCode, Activity, Server, Diamond, Scaling,
@@ -5,9 +6,7 @@ import {
   Container, GitBranch, Cloud, Package, Zap, Gift,
   TestTube, Waypoints, Target, Blocks, ClipboardCheck,
   Users, Eye, HandHelping, BookOpen, UserRound, Workflow,
-  Bot, Baseline, Network, AppWindow, Component, Gauge,
-  React, Vue, Angular, Javascript, Typescript, Nodejs,
-  Redux, Vuex, Git, Scrum, Kanban, Sentry
+  Bot, Baseline, Network, AppWindow, Component, Gauge
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
@@ -19,18 +18,18 @@ const Skills = () => {
       icon: BrainCircuit,
       description: "Experienced in modern web development with a focus on front-end technologies and responsive design.",
       skills: [
-        { name: "React", icon: React, description: "Building scalable frontend applications with React and its ecosystem" },
-        { name: "Vue", icon: Vue, description: "Developing interactive web applications with Vue.js" },
-        { name: "Angular", icon: Angular, description: "Creating enterprise-level applications with Angular framework" },
-        { name: "TypeScript", icon: Typescript, description: "Writing type-safe JavaScript code with TypeScript" },
-        { name: "JavaScript", icon: Javascript, description: "Core JavaScript development and ES6+ features" },
-        { name: "Node.js", icon: Nodejs, description: "Server-side JavaScript runtime development" },
-        { name: "Redux", icon: Redux, description: "State management for React applications" },
-        { name: "Vuex", icon: Vuex, description: "State management pattern for Vue.js applications" },
-        { name: "Git", icon: Git, description: "Version control and collaboration using Git" },
-        { name: "Scrum", icon: Scrum, description: "Agile project management with Scrum methodology" },
-        { name: "Kanban", icon: Kanban, description: "Visual project management using Kanban boards" },
-        { name: "Sentry", icon: Sentry, description: "Error tracking and performance monitoring" }
+        { name: "React", icon: Code2, description: "Building scalable frontend applications with React and its ecosystem" },
+        { name: "Vue", icon: Component, description: "Developing interactive web applications with Vue.js" },
+        { name: "Angular", icon: Activity, description: "Creating enterprise-level applications with Angular framework" },
+        { name: "TypeScript", icon: FileCode, description: "Writing type-safe JavaScript code with TypeScript" },
+        { name: "JavaScript", icon: Code2, description: "Core JavaScript development and ES6+ features" },
+        { name: "Node.js", icon: Server, description: "Server-side JavaScript runtime development" },
+        { name: "Redux", icon: Diamond, description: "State management for React applications" },
+        { name: "Vuex", icon: AppWindow, description: "State management pattern for Vue.js applications" },
+        { name: "Git", icon: GitBranch, description: "Version control and collaboration using Git" },
+        { name: "Scrum", icon: Target, description: "Agile project management with Scrum methodology" },
+        { name: "Kanban", icon: Blocks, description: "Visual project management using Kanban boards" },
+        { name: "Sentry", icon: Eye, description: "Error tracking and performance monitoring" }
       ]
     },
     {
@@ -137,7 +136,7 @@ const Skills = () => {
                             <div className="space-y-1">
                               <h4 className="text-sm font-semibold">{skill.name}</h4>
                               <p className="text-sm text-muted-foreground">
-                                {skill.description}
+                                {skill.description || `Skills and experience with ${skill.name}`}
                               </p>
                             </div>
                           </div>
