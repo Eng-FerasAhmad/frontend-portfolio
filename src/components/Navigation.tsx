@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Book, Briefcase, Mail, User, Globe } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,10 +23,10 @@ const Navigation = () => {
   }
 
   const navItems = [
-    { label: t('nav.about'), href: '#about', icon: User },
-    { label: t('nav.skills'), href: '#skills', icon: Book },
-    { label: t('nav.projects'), href: '#projects', icon: Briefcase },
-    { label: t('nav.contact'), href: '#contact', icon: Mail },
+    { label: t('nav.about'), to: '/about', icon: User },
+    { label: t('nav.skills'), to: '/skills', icon: Book },
+    { label: t('nav.projects'), to: '/projects', icon: Briefcase },
+    { label: t('nav.contact'), to: '/contact', icon: Mail },
   ];
 
   const changeLanguage = (lang: string) => {
@@ -35,19 +36,19 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 ${isScrolled ? 'bg-background/90 dark:bg-navy/90 backdrop-blur-md py-4' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="text-foreground dark:text-white font-bold text-xl">
+        <Link to="/" className="text-foreground dark:text-white font-bold text-xl">
           {t('nav.portfolio')}
-        </a>
+        </Link>
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
+              to={item.to}
               className="text-foreground/80 dark:text-white/80 hover:text-foreground dark:hover:text-white flex items-center gap-2"
             >
               <item.icon className="w-4 h-4" />
               {item.label}
-            </a>
+            </Link>
           ))}
           <DropdownMenu>
             <DropdownMenuTrigger className="text-foreground/80 dark:text-white/80 hover:text-foreground dark:hover:text-white flex items-center gap-2">
