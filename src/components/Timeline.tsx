@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { GraduationCap, Briefcase } from 'lucide-react';
@@ -11,34 +10,14 @@ interface TimelineItem {
   description?: string;
 }
 
+// Reversed timeline data to show newest first
 const timelineData: TimelineItem[] = [
   {
-    year: "2005-2011",
-    title: "Elementary School",
-    subtitle: "St. Mary's Elementary",
-    type: "education",
-    description: "Foundations of learning and early development"
-  },
-  {
-    year: "2011-2014",
-    title: "Middle School",
-    subtitle: "Lincoln Middle School",
-    type: "education",
-    description: "Advanced coursework and introduction to programming"
-  },
-  {
-    year: "2014-2017",
-    title: "High School",
-    subtitle: "Washington High School",
-    type: "education",
-    description: "Focus on STEM subjects and computer science"
-  },
-  {
-    year: "2017-2021",
-    title: "Bachelor's Degree in Computer Science",
-    subtitle: "University of Technology",
-    type: "education",
-    description: "Specialized in Web Development and Software Engineering"
+    year: "2022-Present",
+    title: "Senior Frontend Engineer",
+    subtitle: "InnovateTech Solutions",
+    type: "work",
+    description: "Leading frontend development team and architecting solutions"
   },
   {
     year: "2021-2022",
@@ -48,11 +27,32 @@ const timelineData: TimelineItem[] = [
     description: "Developed responsive web applications using React"
   },
   {
-    year: "2022-Present",
-    title: "Senior Frontend Engineer",
-    subtitle: "InnovateTech Solutions",
-    type: "work",
-    description: "Leading frontend development team and architecting solutions"
+    year: "2017-2021",
+    title: "Bachelor's Degree in Computer Science",
+    subtitle: "University of Technology",
+    type: "education",
+    description: "Specialized in Web Development and Software Engineering"
+  },
+  {
+    year: "2014-2017",
+    title: "High School",
+    subtitle: "Washington High School",
+    type: "education",
+    description: "Focus on STEM subjects and computer science"
+  },
+  {
+    year: "2011-2014",
+    title: "Middle School",
+    subtitle: "Lincoln Middle School",
+    type: "education",
+    description: "Advanced coursework and introduction to programming"
+  },
+  {
+    year: "2005-2011",
+    title: "Elementary School",
+    subtitle: "St. Mary's Elementary",
+    type: "education",
+    description: "Foundations of learning and early development"
   }
 ];
 
