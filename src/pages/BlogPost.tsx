@@ -161,6 +161,33 @@ const BlogPost = () => {
     );
   }
 
+  const renderContent = (content: string) => {
+    const parts = content.split('```');
+    return parts.map((part, index) => {
+      // Even indices are regular text, odd indices are code blocks
+      if (index % 2 === 0) {
+        return <p key={index}>{part}</p>;
+      } else {
+        // Extract language if specified (e.g., ```jsx)
+        const [language, ...code] = part.split('\n');
+        return (
+          <div key={index} className="my-6">
+            {language && (
+              <div className="bg-[#1A1F2C] text-white px-4 py-2 text-sm rounded-t-lg border-b border-white/10">
+                {language}
+              </div>
+            )}
+            <pre className="bg-[#1A1F2C] overflow-x-auto rounded-b-lg p-4">
+              <code className="font-mono text-sm text-white">
+                {code.join('\n')}
+              </code>
+            </pre>
+          </div>
+        );
+      }
+    });
+  };
+
   return (
     <div className="min-h-screen pt-20">
       <div className="max-w-4xl mx-auto px-6">
@@ -192,9 +219,7 @@ const BlogPost = () => {
           </div>
 
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            {post.content.split('\n').map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+            {renderContent(post.content)}
           </div>
         </div>
       </div>
