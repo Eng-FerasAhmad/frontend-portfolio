@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from './ui/card';
-import { GraduationCap, Briefcase } from 'lucide-react';
+import { GraduationCap, Briefcase, Calendar } from 'lucide-react';
 
 interface TimelineItem {
   year: string;
@@ -63,22 +63,24 @@ const Timeline = () => {
       <h2 className="text-3xl font-bold text-center mb-12">
         <span className="text-gradient">Education & Experience</span>
       </h2>
-      <div className="relative">
-        {/* Vertical line - centered through the icons */}
-        <div className="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-purple-400 to-purple-300 dark:from-purple-400 dark:via-purple-500 dark:to-purple-600" />
+      
+      {/* Centered timeline container */}
+      <div className="relative max-w-5xl mx-auto px-4">
+        {/* Centered vertical line */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-purple-400 to-purple-300 dark:from-purple-400 dark:via-purple-500 dark:to-purple-600" />
 
         {/* Timeline items */}
-        <div className="space-y-12">
+        <div className="space-y-16">
           {timelineData.map((item, index) => (
             <div
               key={index}
-              className="relative pl-16 md:pl-20 animate-fade-up"
+              className={`relative animate-fade-up ${index % 2 === 0 ? 'md:pl-1/2' : 'md:pr-1/2 md:flex md:justify-end'}`}
               style={{
                 animationDelay: `${index * 150}ms`
               }}
             >
-              {/* Icon - improved centering and visibility */}
-              <div className="absolute left-0 top-2 flex items-center justify-center p-3 rounded-full bg-white/90 dark:bg-navy-dark/90 shadow-lg border-2 border-purple-300 dark:border-purple-700 z-10">
+              {/* Icon - centered on the timeline */}
+              <div className="absolute left-1/2 top-0 transform -translate-x-1/2 flex items-center justify-center p-3 rounded-full bg-white/90 dark:bg-navy-dark/90 shadow-lg border-2 border-purple-300 dark:border-purple-700 z-10">
                 {item.type === 'education' ? (
                   <GraduationCap className="w-5 h-5 md:w-6 md:h-6 text-purple-500" />
                 ) : (
@@ -86,25 +88,30 @@ const Timeline = () => {
                 )}
               </div>
 
-              {/* Year badge - separated for better mobile layout */}
-              <div className="absolute -right-2 -top-2 bg-purple-500 text-white text-xs font-bold py-1 px-3 rounded-full shadow-md z-10">
-                {item.year}
+              {/* Content - alternating sides */}
+              <div className={`relative ${index % 2 === 0 ? 'md:ml-10' : 'md:mr-10'} mt-6 md:mt-0 md:w-[calc(100%-40px)]`}>
+                <Card className="backdrop-blur-sm bg-white/70 dark:bg-navy-dark/70 hover:bg-white/90 dark:hover:bg-navy-dark/90 transition-all duration-300 transform hover:translate-y-1 border border-purple-100 dark:border-purple-900/30 shadow-md">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-2 text-purple-500 dark:text-purple-300">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      <span className="text-sm font-semibold">{item.year}</span>
+                    </div>
+                    
+                    <h3 className="text-lg font-bold mb-1">{item.title}</h3>
+                    <div className="text-sm text-purple-500 dark:text-purple-300 font-medium mb-2">
+                      {item.subtitle}
+                    </div>
+                    {item.description && (
+                      <p className="text-sm text-foreground/70 dark:text-white/70">
+                        {item.description}
+                      </p>
+                    )}
+                  </CardContent>
+                </Card>
+                
+                {/* Connector line for larger screens */}
+                <div className={`hidden md:block absolute top-1/2 transform -translate-y-1/2 w-10 h-0.5 bg-purple-300 dark:bg-purple-700 ${index % 2 === 0 ? 'left-[-10px]' : 'right-[-10px]'}`} />
               </div>
-
-              {/* Content */}
-              <Card className="backdrop-blur-sm bg-white/70 dark:bg-navy-dark/70 hover:bg-white/90 dark:hover:bg-navy-dark/90 transition-all duration-300 transform hover:translate-x-1 border border-purple-100 dark:border-purple-900/30 shadow-md">
-                <CardContent className="p-6 pt-8">
-                  <h3 className="text-lg font-bold mb-1">{item.title}</h3>
-                  <div className="text-sm text-purple-500 dark:text-purple-300 font-medium mb-2">
-                    {item.subtitle}
-                  </div>
-                  {item.description && (
-                    <p className="text-sm text-foreground/70 dark:text-white/70">
-                      {item.description}
-                    </p>
-                  )}
-                </CardContent>
-              </Card>
             </div>
           ))}
         </div>
