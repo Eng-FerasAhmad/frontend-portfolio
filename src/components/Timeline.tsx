@@ -64,7 +64,7 @@ const Timeline = () => {
         <span className="text-gradient">Education & Experience</span>
       </h2>
       
-      {/* Centered timeline container */}
+      {/* Centered timeline container with increased horizontal space */}
       <div className="relative max-w-5xl mx-auto px-4">
         {/* Centered vertical line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-purple-400 to-purple-300 dark:from-purple-400 dark:via-purple-500 dark:to-purple-600" />
@@ -74,12 +74,12 @@ const Timeline = () => {
           {timelineData.map((item, index) => (
             <div
               key={index}
-              className={`relative animate-fade-up ${index % 2 === 0 ? 'md:pl-1/2' : 'md:pr-1/2 md:flex md:justify-end'}`}
+              className={`relative flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'} animate-fade-up`}
               style={{
                 animationDelay: `${index * 150}ms`
               }}
             >
-              {/* Icon - centered on the timeline */}
+              {/* Timeline dot - centered on the timeline */}
               <div className="absolute left-1/2 top-0 transform -translate-x-1/2 flex items-center justify-center p-3 rounded-full bg-white/90 dark:bg-navy-dark/90 shadow-lg border-2 border-purple-300 dark:border-purple-700 z-10">
                 {item.type === 'education' ? (
                   <GraduationCap className="w-5 h-5 md:w-6 md:h-6 text-purple-500" />
@@ -88,9 +88,9 @@ const Timeline = () => {
                 )}
               </div>
 
-              {/* Content - alternating sides */}
-              <div className={`relative ${index % 2 === 0 ? 'md:ml-10' : 'md:mr-10'} mt-6 md:mt-0 md:w-[calc(100%-40px)]`}>
-                <Card className="backdrop-blur-sm bg-white/70 dark:bg-navy-dark/70 hover:bg-white/90 dark:hover:bg-navy-dark/90 transition-all duration-300 transform hover:translate-y-1 border border-purple-100 dark:border-purple-900/30 shadow-md">
+              {/* Content - alternating sides with proper spacing from center */}
+              <div className={`${index % 2 === 0 ? 'pr-[calc(50%+20px)]' : 'pl-[calc(50%+20px)]'} w-1/2`}>
+                <Card className="backdrop-blur-sm bg-white/70 dark:bg-navy-dark/70 hover:bg-white/90 dark:hover:bg-navy-dark/90 transition-all duration-300 transform hover:-translate-y-1 shadow-md border-0">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-2 text-purple-500 dark:text-purple-300">
                       <Calendar className="w-4 h-4 mr-1" />
@@ -108,9 +108,6 @@ const Timeline = () => {
                     )}
                   </CardContent>
                 </Card>
-                
-                {/* Connector line for larger screens */}
-                <div className={`hidden md:block absolute top-1/2 transform -translate-y-1/2 w-10 h-0.5 bg-purple-300 dark:bg-purple-700 ${index % 2 === 0 ? 'left-[-10px]' : 'right-[-10px]'}`} />
               </div>
             </div>
           ))}
