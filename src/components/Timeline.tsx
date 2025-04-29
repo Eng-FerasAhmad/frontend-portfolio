@@ -64,34 +64,36 @@ const Timeline = () => {
         <span className="text-gradient">Education & Experience</span>
       </h2>
       <div className="relative">
-        {/* Vertical line */}
-        <div className="absolute left-8 top-5 bottom-5 w-0.5 bg-gradient-to-b from-purple-500 via-purple-400 to-purple-300 dark:from-purple-400 dark:via-purple-500 dark:to-purple-600" />
+        {/* Vertical line - centered through the icons */}
+        <div className="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-purple-400 to-purple-300 dark:from-purple-400 dark:via-purple-500 dark:to-purple-600" />
 
         {/* Timeline items */}
-        <div className="space-y-8">
+        <div className="space-y-12">
           {timelineData.map((item, index) => (
             <div
               key={index}
-              className="relative pl-16 animate-fade-up"
+              className="relative pl-16 md:pl-20 animate-fade-up"
               style={{
                 animationDelay: `${index * 150}ms`
               }}
             >
-              {/* Icon */}
-              <div className="absolute left-0 p-3 rounded-full bg-white dark:bg-navy-dark shadow-lg border border-purple-200 dark:border-purple-900">
+              {/* Icon - improved centering and visibility */}
+              <div className="absolute left-0 top-2 flex items-center justify-center p-3 rounded-full bg-white/90 dark:bg-navy-dark/90 shadow-lg border-2 border-purple-300 dark:border-purple-700 z-10">
                 {item.type === 'education' ? (
-                  <GraduationCap className="w-6 h-6 text-purple-500" />
+                  <GraduationCap className="w-5 h-5 md:w-6 md:h-6 text-purple-500" />
                 ) : (
-                  <Briefcase className="w-6 h-6 text-purple-500" />
+                  <Briefcase className="w-5 h-5 md:w-6 md:h-6 text-purple-500" />
                 )}
               </div>
 
+              {/* Year badge - separated for better mobile layout */}
+              <div className="absolute -right-2 -top-2 bg-purple-500 text-white text-xs font-bold py-1 px-3 rounded-full shadow-md z-10">
+                {item.year}
+              </div>
+
               {/* Content */}
-              <Card className="backdrop-blur-sm bg-white/70 dark:bg-navy-dark/70 hover:bg-white/90 dark:hover:bg-navy-dark/90 transition-all duration-300 transform hover:translate-x-1 border border-purple-100 dark:border-purple-900/30">
-                <CardContent className="p-6">
-                  <div className="absolute -right-2 -top-2 bg-purple-500 text-white text-xs font-bold py-1 px-3 rounded-full">
-                    {item.year}
-                  </div>
+              <Card className="backdrop-blur-sm bg-white/70 dark:bg-navy-dark/70 hover:bg-white/90 dark:hover:bg-navy-dark/90 transition-all duration-300 transform hover:translate-x-1 border border-purple-100 dark:border-purple-900/30 shadow-md">
+                <CardContent className="p-6 pt-8">
                   <h3 className="text-lg font-bold mb-1">{item.title}</h3>
                   <div className="text-sm text-purple-500 dark:text-purple-300 font-medium mb-2">
                     {item.subtitle}
