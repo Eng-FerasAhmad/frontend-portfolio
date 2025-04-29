@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { GraduationCap, Briefcase } from 'lucide-react';
@@ -77,7 +78,7 @@ const Timeline = () => {
               }}
             >
               {/* Icon */}
-              <div className="absolute left-0 p-3 rounded-full bg-white dark:bg-navy-dark shadow-lg">
+              <div className="absolute left-0 p-3 rounded-full bg-white dark:bg-navy-dark shadow-lg border border-purple-200 dark:border-purple-900">
                 {item.type === 'education' ? (
                   <GraduationCap className="w-6 h-6 text-purple-500" />
                 ) : (
@@ -86,17 +87,17 @@ const Timeline = () => {
               </div>
 
               {/* Content */}
-              <Card className="backdrop-blur-sm bg-white/50 dark:bg-navy-dark/50 hover:bg-white/80 dark:hover:bg-navy-dark/80 transition-colors">
+              <Card className="backdrop-blur-sm bg-white/70 dark:bg-navy-dark/70 hover:bg-white/90 dark:hover:bg-navy-dark/90 transition-all duration-300 transform hover:translate-x-1 border border-purple-100 dark:border-purple-900/30">
                 <CardContent className="p-6">
-                  <div className="text-sm font-semibold text-purple-500 mb-1">
+                  <div className="absolute -right-2 -top-2 bg-purple-500 text-white text-xs font-bold py-1 px-3 rounded-full">
                     {item.year}
                   </div>
                   <h3 className="text-lg font-bold mb-1">{item.title}</h3>
-                  <div className="text-sm text-foreground/80 mb-2">
+                  <div className="text-sm text-purple-500 dark:text-purple-300 font-medium mb-2">
                     {item.subtitle}
                   </div>
                   {item.description && (
-                    <p className="text-sm text-foreground/70">
+                    <p className="text-sm text-foreground/70 dark:text-white/70">
                       {item.description}
                     </p>
                   )}
