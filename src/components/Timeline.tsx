@@ -68,7 +68,7 @@ const Timeline = () => {
       </h2>
       
       {/* Centered timeline container with increased horizontal space */}
-      <div className="relative max-w-7xl mx-auto px-4">
+      <div className="relative max-w-6xl mx-auto px-4">
         {/* Centered vertical line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-purple-400 to-purple-300 dark:from-purple-400 dark:via-purple-500 dark:to-purple-600" />
 
@@ -92,7 +92,12 @@ const Timeline = () => {
               </div>
 
               {/* Content - alternating sides with proper spacing from center */}
-              <div className={`${isMobile ? 'mt-16 w-full' : (index % 2 === 0 ? 'pr-[calc(50%+2rem)]' : 'pl-[calc(50%+2rem)] ml-auto')} ${isMobile ? 'w-full' : 'w-[calc(50%-2rem)]'}`}>
+              <div className={`
+                ${isMobile ? 'mt-16 w-full' : index % 2 === 0 
+                  ? 'w-[45%] pr-8 mr-[5%]' 
+                  : 'w-[45%] pl-8 ml-[55%]'
+                }
+              `}>
                 <Card className="backdrop-blur-sm bg-white/70 dark:bg-navy-dark/70 hover:bg-white/90 dark:hover:bg-navy-dark/90 transition-all duration-300 transform hover:-translate-y-1 shadow-md border-0">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-2 text-purple-500 dark:text-purple-300">
