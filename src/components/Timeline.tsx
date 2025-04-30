@@ -2,6 +2,7 @@
 import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { GraduationCap, Briefcase, Calendar } from 'lucide-react';
+import { useIsMobile } from '../hooks/use-mobile';
 
 interface TimelineItem {
   year: string;
@@ -58,6 +59,8 @@ const timelineData: TimelineItem[] = [
 ];
 
 const Timeline = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <div className="mt-16 space-y-8">
       <h2 className="text-3xl font-bold text-center mb-12">
@@ -65,7 +68,7 @@ const Timeline = () => {
       </h2>
       
       {/* Centered timeline container with increased horizontal space */}
-      <div className="relative max-w-5xl mx-auto px-4">
+      <div className="relative max-w-7xl mx-auto px-4">
         {/* Centered vertical line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-purple-400 to-purple-300 dark:from-purple-400 dark:via-purple-500 dark:to-purple-600" />
 
@@ -74,7 +77,7 @@ const Timeline = () => {
           {timelineData.map((item, index) => (
             <div
               key={index}
-              className={`relative flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'} animate-fade-up`}
+              className={`relative flex ${isMobile ? 'flex-col items-center' : (index % 2 === 0 ? 'justify-start' : 'justify-end')} animate-fade-up`}
               style={{
                 animationDelay: `${index * 150}ms`
               }}
@@ -89,7 +92,7 @@ const Timeline = () => {
               </div>
 
               {/* Content - alternating sides with proper spacing from center */}
-              <div className={`${index % 2 === 0 ? 'pr-12 md:pr-16' : 'pl-12 md:pl-16'} w-1/2 max-w-none`}>
+              <div className={`${isMobile ? 'mt-16 w-full' : (index % 2 === 0 ? 'pr-[calc(50%+2rem)]' : 'pl-[calc(50%+2rem)] ml-auto')} ${isMobile ? 'w-full' : 'w-[calc(50%-2rem)]'}`}>
                 <Card className="backdrop-blur-sm bg-white/70 dark:bg-navy-dark/70 hover:bg-white/90 dark:hover:bg-navy-dark/90 transition-all duration-300 transform hover:-translate-y-1 shadow-md border-0">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-2 text-purple-500 dark:text-purple-300">
