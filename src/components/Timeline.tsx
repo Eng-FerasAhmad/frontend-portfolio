@@ -89,7 +89,7 @@ const Timeline = () => {
               </div>
 
               {/* Content - alternating sides with proper spacing from center */}
-              <div className={`${index % 2 === 0 ? 'pr-[calc(50%+20px)]' : 'pl-[calc(50%+20px)]'} w-1/2`}>
+              <div className={`${index % 2 === 0 ? 'pr-12 md:pr-16' : 'pl-12 md:pl-16'} w-1/2 max-w-none`}>
                 <Card className="backdrop-blur-sm bg-white/70 dark:bg-navy-dark/70 hover:bg-white/90 dark:hover:bg-navy-dark/90 transition-all duration-300 transform hover:-translate-y-1 shadow-md border-0">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-2 text-purple-500 dark:text-purple-300">
