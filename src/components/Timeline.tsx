@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from './ui/card';
-import { GraduationCap, Briefcase, Calendar } from 'lucide-react';
+import { GraduationCap, Briefcase, Calendar, BabyIcon } from 'lucide-react';
 import { useIsMobile } from '../hooks/use-mobile';
 
 interface TimelineItem {
@@ -119,6 +119,18 @@ const Timeline = () => {
               </div>
             </div>
           ))}
+          
+          {/* Birth information at the bottom of timeline */}
+          <div className="relative flex justify-center animate-fade-up" style={{ animationDelay: '900ms' }}>
+            <div className="flex flex-col items-center">
+              <div className="flex items-center justify-center p-3 rounded-full bg-white/90 dark:bg-navy-dark/90 shadow-lg border-2 border-purple-300 dark:border-purple-700 z-10">
+                <BabyIcon className="w-5 h-5 md:w-6 md:h-6 text-purple-500" />
+              </div>
+              <div className="mt-3 text-center">
+                <p className="text-sm font-medium text-purple-500 dark:text-purple-300">Born Sep. 1987</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
