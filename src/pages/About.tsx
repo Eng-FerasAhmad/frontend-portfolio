@@ -13,8 +13,8 @@ const About = () => {
         {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background dark:from-navy dark:via-navy/90 dark:to-navy opacity-80" />
         
-        {/* Floating shapes - circles */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-200/30 dark:bg-purple-900/20 blur-3xl animate-pulse" 
+        {/* Floating shapes - using neutral colors instead of purple */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-gray-200/30 dark:bg-gray-700/20 blur-3xl animate-pulse" 
              style={{animationDuration: '15s'}} />
         <div className="absolute bottom-1/4 right-1/3 w-96 h-96 rounded-full bg-blue-200/20 dark:bg-blue-900/20 blur-3xl animate-pulse"
              style={{animationDuration: '25s', animationDelay: '2s'}} />
@@ -32,19 +32,19 @@ const About = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Image section */}
               <div className="relative">
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-xl border-2 border-white/20 dark:border-purple-900/30">
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-xl border-2 border-white/20 dark:border-gray-800/30">
                   <img 
                     src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
                     alt="Profile"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-purple-500/30 via-transparent to-transparent mix-blend-overlay" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-500/30 via-transparent to-transparent mix-blend-overlay" />
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-purple-500 rounded-full opacity-70 blur-xl" />
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gray-400 rounded-full opacity-70 blur-xl" />
               </div>
 
               {/* Content section */}
-              <div className="space-y-6 animate-fade-up backdrop-blur-sm bg-white/30 dark:bg-navy-dark/30 p-6 rounded-xl shadow-lg border border-white/20 dark:border-purple-900/20">
+              <div className="space-y-6 animate-fade-up backdrop-blur-sm bg-white/30 dark:bg-navy-dark/30 p-6 rounded-xl shadow-lg border border-white/20 dark:border-gray-800/20">
                 <h1 className="text-4xl font-bold">
                   <span className="text-gradient">Hello, I'm Sarah</span>
                 </h1>
