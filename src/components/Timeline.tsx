@@ -3,6 +3,7 @@ import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { GraduationCap, Briefcase, Calendar, BabyIcon } from 'lucide-react';
 import { useIsMobile } from '../hooks/use-mobile';
+import { useTranslation } from 'react-i18next';
 
 interface TimelineItem {
   year: string;
@@ -10,61 +11,69 @@ interface TimelineItem {
   subtitle: string;
   type: 'education' | 'work';
   description?: string;
+  translationKey: string;
 }
-
-// Reversed timeline data to show newest first
-const timelineData: TimelineItem[] = [
-  {
-    year: "2022-Present",
-    title: "Senior Frontend Engineer",
-    subtitle: "InnovateTech Solutions",
-    type: "work",
-    description: "Leading frontend development team and architecting solutions"
-  },
-  {
-    year: "2021-2022",
-    title: "Junior Frontend Developer",
-    subtitle: "TechStart Inc.",
-    type: "work",
-    description: "Developed responsive web applications using React"
-  },
-  {
-    year: "2017-2021",
-    title: "Bachelor's Degree in Computer Science",
-    subtitle: "University of Technology",
-    type: "education",
-    description: "Specialized in Web Development and Software Engineering"
-  },
-  {
-    year: "2014-2017",
-    title: "High School",
-    subtitle: "Washington High School",
-    type: "education",
-    description: "Focus on STEM subjects and computer science"
-  },
-  {
-    year: "2011-2014",
-    title: "Middle School",
-    subtitle: "Lincoln Middle School",
-    type: "education",
-    description: "Advanced coursework and introduction to programming"
-  },
-  {
-    year: "2005-2011",
-    title: "Elementary School",
-    subtitle: "St. Mary's Elementary",
-    type: "education",
-    description: "Foundations of learning and early development"
-  }
-];
 
 const Timeline = () => {
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
+  
+  // Timeline data with translation keys
+  const timelineData: TimelineItem[] = [
+    {
+      year: "2022-Present",
+      title: t('timeline.items.0.title'),
+      subtitle: t('timeline.items.0.subtitle'),
+      type: "work",
+      description: t('timeline.items.0.description'),
+      translationKey: "senior-frontend"
+    },
+    {
+      year: "2021-2022",
+      title: t('timeline.items.1.title'),
+      subtitle: t('timeline.items.1.subtitle'),
+      type: "work",
+      description: t('timeline.items.1.description'),
+      translationKey: "junior-frontend"
+    },
+    {
+      year: "2017-2021",
+      title: t('timeline.items.2.title'),
+      subtitle: t('timeline.items.2.subtitle'),
+      type: "education",
+      description: t('timeline.items.2.description'),
+      translationKey: "bachelors"
+    },
+    {
+      year: "2014-2017",
+      title: t('timeline.items.3.title'),
+      subtitle: t('timeline.items.3.subtitle'),
+      type: "education",
+      description: t('timeline.items.3.description'),
+      translationKey: "high-school"
+    },
+    {
+      year: "2011-2014",
+      title: t('timeline.items.4.title'),
+      subtitle: t('timeline.items.4.subtitle'),
+      type: "education",
+      description: t('timeline.items.4.description'),
+      translationKey: "middle-school"
+    },
+    {
+      year: "2005-2011",
+      title: t('timeline.items.5.title'),
+      subtitle: t('timeline.items.5.subtitle'),
+      type: "education",
+      description: t('timeline.items.5.description'),
+      translationKey: "elementary"
+    }
+  ];
   
   return (
     <div className="mt-16 space-y-8">
       <h2 className="text-3xl font-bold text-center mb-12">
-        <span className="text-gradient">Education & Experience</span>
+        <span className="text-gradient">{t('timeline.title')}</span>
       </h2>
       
       {/* Centered timeline container with increased horizontal space */}
@@ -127,7 +136,7 @@ const Timeline = () => {
                 <BabyIcon className="w-5 h-5 md:w-6 md:h-6 text-purple-500" />
               </div>
               <div className="mt-3 text-center">
-                <p className="text-sm font-medium text-purple-500 dark:text-purple-300">Born Sep. 1987</p>
+                <p className="text-sm font-medium text-purple-500 dark:text-purple-300">{t('timeline.birth')}</p>
               </div>
             </div>
           </div>

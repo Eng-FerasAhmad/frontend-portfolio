@@ -1,48 +1,49 @@
 
-import Navigation from "../components/Navigation";
+import { useTranslation } from "react-i18next";
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 const Contact = () => {
+  const { t } = useTranslation();
+  
   const socialLinks = [
     {
       name: "LinkedIn",
       icon: Linkedin,
       url: "https://linkedin.com",
-      description: "Connect with me professionally"
+      description: t('contact.socials.linkedin')
     },
     {
       name: "Twitter",
       icon: Twitter,
       url: "https://twitter.com",
-      description: "Follow me for tech updates"
+      description: t('contact.socials.twitter')
     },
     {
       name: "Instagram",
       icon: Instagram,
       url: "https://instagram.com",
-      description: "Behind the scenes & daily life"
+      description: t('contact.socials.instagram')
     },
     {
       name: "Facebook",
       icon: Facebook,
       url: "https://facebook.com",
-      description: "Stay connected"
+      description: t('contact.socials.facebook')
     }
   ];
 
   return (
     <div className="min-h-screen flex items-center justify-center py-20 px-6">
       <div className="w-full max-w-4xl mx-auto text-center bg-white/50 dark:bg-navy-dark/50 backdrop-blur-sm rounded-xl p-8 shadow-lg">
-        <h1 className="text-4xl font-bold mb-6 text-gradient">Get in Touch</h1>
+        <h1 className="text-4xl font-bold mb-6 text-gradient">{t('contact.title')}</h1>
         
         <div className="mb-12 space-y-4">
           <p className="text-lg text-foreground dark:text-white/80">
-            I'm always interested in hearing about new projects and opportunities.
-            Feel free to reach out through any of my social media channels.
+            {t('contact.description1')}
           </p>
           <p className="text-lg text-foreground dark:text-white/80">
-            Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            {t('contact.description2')}
           </p>
         </div>
 

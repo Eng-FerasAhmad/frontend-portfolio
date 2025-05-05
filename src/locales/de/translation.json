@@ -5,12 +5,106 @@
     "skills": "Fähigkeiten",
     "projects": "Projekte",
     "contact": "Kontakt",
-    "portfolio": "Portfolio"
+    "portfolio": "Portfolio",
+    "blog": "Blog"
   },
   "hero": {
     "title": "Senior Frontend Entwickler",
     "subtitle": "Entwicklung außergewöhnlicher Web-Erlebnisse mit modernen Technologien",
     "viewProjects": "Projekte ansehen",
     "contactMe": "Kontakt aufnehmen"
+  },
+  "about": {
+    "greeting": "Hallo, ich bin Sarah",
+    "profile": "Profil",
+    "intro": "Ich bin eine leidenschaftliche Senior Frontend Entwicklerin mit über 8 Jahren Erfahrung in der Gestaltung außergewöhnlicher Web-Erlebnisse. Meine Expertise liegt in React, TypeScript und modernen Webtechnologien.",
+    "expertise": "Ich bin spezialisiert auf die Entwicklung responsiver, leistungsfähiger und zugänglicher Webanwendungen, die Benutzer begeistern und reale Probleme lösen. Wenn ich nicht programmiere, findet man mich bei Open-Source-Projekten oder als Mentorin für angehende Entwickler.",
+    "location": "Derzeit in Berlin, Deutschland, ansässig, verbinde ich technische Expertise mit kreativer Problemlösung, um Produkte zu entwickeln, die einen Unterschied machen."
+  },
+  "timeline": {
+    "title": "Ausbildung & Erfahrung",
+    "birth": "Geboren Sep. 1987",
+    "items": [
+      {
+        "title": "Senior Frontend Entwicklerin",
+        "subtitle": "InnovateTech Solutions",
+        "description": "Leitung des Frontend-Entwicklungsteams und Architektur von Lösungen"
+      },
+      {
+        "title": "Junior Frontend Entwicklerin",
+        "subtitle": "TechStart Inc.",
+        "description": "Entwicklung responsiver Webanwendungen mit React"
+      },
+      {
+        "title": "Bachelor in Informatik",
+        "subtitle": "Technische Universität",
+        "description": "Spezialisierung auf Webentwicklung und Software Engineering"
+      },
+      {
+        "title": "Gymnasium",
+        "subtitle": "Washington Gymnasium",
+        "description": "Fokus auf MINT-Fächer und Informatik"
+      },
+      {
+        "title": "Mittelstufe",
+        "subtitle": "Lincoln Schule",
+        "description": "Fortgeschrittener Unterricht und Einführung in die Programmierung"
+      },
+      {
+        "title": "Grundschule",
+        "subtitle": "St. Mary's Grundschule",
+        "description": "Grundlagen des Lernens und frühe Entwicklung"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Ausgewählte Projekte",
+    "description": "Hier sind einige der Projekte, an denen ich gearbeitet habe. Jedes Projekt stellt eine einzigartige Herausforderung dar und eine Gelegenheit zu lernen und als Entwickler zu wachsen.",
+    "liveDemo": "Live Demo",
+    "sourceCode": "Quellcode"
+  },
+  "contact": {
+    "title": "Kontakt aufnehmen",
+    "description1": "Ich bin immer daran interessiert, von neuen Projekten und Möglichkeiten zu hören. Fühlen Sie sich frei, mich über meine Social-Media-Kanäle zu kontaktieren.",
+    "description2": "Ob Sie eine Frage haben oder einfach Hallo sagen möchten, ich werde mein Bestes tun, um Ihnen zu antworten!",
+    "socials": {
+      "linkedin": "Beruflich vernetzen",
+      "twitter": "Folgen für Tech-Updates",
+      "instagram": "Hinter den Kulissen & Alltag",
+      "facebook": "In Verbindung bleiben"
+    }
+  },
+  "blog": {
+    "title": "Frontend Tech Blog",
+    "subtitle": "Erforschung moderner Webentwicklungstechnologien und Best Practices",
+    "readMore": "Weiterlesen",
+    "backToBlog": "Zurück zum Blog"
+  },
+  "skills": {
+    "title": "Meine Fähigkeiten",
+    "developer": {
+      "title": "Entwickler",
+      "description": "Erfahrung in moderner Webentwicklung mit Fokus auf Frontend-Technologien und responsive Design."
+    },
+    "design": {
+      "title": "Design",
+      "description": "Erstellung schöner und intuitiver Benutzeroberflächen mit modernen Design-Prinzipien und Tools."
+    },
+    "build": {
+      "title": "Entwicklung",
+      "description": "Expertise in DevOps und Deployment-Tools zur Erstellung skalierbarer Anwendungen."
+    },
+    "testing": {
+      "title": "Testing",
+      "description": "Sicherstellung der Codequalität durch umfassende Testmethoden."
+    },
+    "trainer": {
+      "title": "Trainer",
+      "description": "Leidenschaftlich darin, Wissen zu teilen und anderen zu helfen, auf ihrem technischen Weg zu wachsen."
+    },
+    "learning": {
+      "title": "Lernen",
+      "description": "Kontinuierliche Erweiterung des Wissens in aufkommenden Technologien und Best Practices."
+    }
   }
 }

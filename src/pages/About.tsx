@@ -2,8 +2,10 @@
 import React from 'react';
 import Timeline from '../components/Timeline';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
   useScrollAnimation();
 
   return (
@@ -35,7 +37,7 @@ const About = () => {
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-xl border-2 border-white/20 dark:border-gray-800/30">
                   <img 
                     src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-                    alt="Profile"
+                    alt={t('about.profile')}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-500/30 via-transparent to-transparent mix-blend-overlay" />
@@ -46,17 +48,17 @@ const About = () => {
               {/* Content section */}
               <div className="space-y-6 animate-fade-up backdrop-blur-sm bg-white/30 dark:bg-navy-dark/30 p-6 rounded-xl shadow-lg border border-white/20 dark:border-gray-800/20">
                 <h1 className="text-4xl font-bold">
-                  <span className="text-gradient">Hello, I'm Sarah</span>
+                  <span className="text-gradient">{t('about.greeting')}</span>
                 </h1>
                 <div className="space-y-4 text-lg text-foreground/80 dark:text-white/80">
                   <p>
-                    I'm a passionate Senior Frontend Engineer with over 8 years of experience crafting exceptional web experiences. My expertise lies in React, TypeScript, and modern web technologies.
+                    {t('about.intro')}
                   </p>
                   <p>
-                    I specialize in building responsive, performant, and accessible web applications that delight users and solve real-world problems. When I'm not coding, you can find me contributing to open-source projects or mentoring aspiring developers.
+                    {t('about.expertise')}
                   </p>
                   <p>
-                    Currently based in Berlin, Germany, I enjoy combining technical expertise with creative problem-solving to build products that make a difference.
+                    {t('about.location')}
                   </p>
                 </div>
               </div>

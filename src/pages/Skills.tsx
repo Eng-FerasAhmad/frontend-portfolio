@@ -1,4 +1,5 @@
 
+import { useTranslation } from "react-i18next";
 import { 
   BrainCircuit, Palette, Wrench, Beaker, GraduationCap, Sparkles,
   Code2, FileCode, Activity, Server, Diamond, Scaling,
@@ -13,11 +14,13 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/h
 import BackgroundDecoration from "@/components/BackgroundDecoration";
 
 const Skills = () => {
+  const { t } = useTranslation();
+
   const skillSections = [
     {
-      title: "Developer",
+      title: t('skills.developer.title'),
       icon: BrainCircuit,
-      description: "Experienced in modern web development with a focus on front-end technologies and responsive design.",
+      description: t('skills.developer.description'),
       skills: [
         { name: "React", icon: Code2, description: "Building scalable frontend applications with React and its ecosystem" },
         { name: "Vue", icon: Component, description: "Developing interactive web applications with Vue.js" },
@@ -34,9 +37,9 @@ const Skills = () => {
       ]
     },
     {
-      title: "Design",
+      title: t('skills.design.title'),
       icon: Palette,
-      description: "Creating beautiful and intuitive user interfaces with modern design principles and tools.",
+      description: t('skills.design.description'),
       skills: [
         { name: "UI/UX Design", icon: Paintbrush },
         { name: "Figma", icon: Figma },
@@ -47,9 +50,9 @@ const Skills = () => {
       ]
     },
     {
-      title: "Build",
+      title: t('skills.build.title'),
       icon: Wrench,
-      description: "Expertise in DevOps and deployment tools to build scalable applications.",
+      description: t('skills.build.description'),
       skills: [
         { name: "Docker", icon: Container },
         { name: "CI/CD", icon: GitBranch },
@@ -60,9 +63,9 @@ const Skills = () => {
       ]
     },
     {
-      title: "Testing",
+      title: t('skills.testing.title'),
       icon: Beaker,
-      description: "Ensuring code quality through comprehensive testing methodologies.",
+      description: t('skills.testing.description'),
       skills: [
         { name: "Jest", icon: TestTube },
         { name: "React Testing Library", icon: Waypoints },
@@ -73,9 +76,9 @@ const Skills = () => {
       ]
     },
     {
-      title: "Trainer",
+      title: t('skills.trainer.title'),
       icon: GraduationCap,
-      description: "Passionate about sharing knowledge and helping others grow in their tech journey.",
+      description: t('skills.trainer.description'),
       skills: [
         { name: "Technical Workshops", icon: Users },
         { name: "Code Reviews", icon: Eye },
@@ -86,9 +89,9 @@ const Skills = () => {
       ]
     },
     {
-      title: "Learning",
+      title: t('skills.learning.title'),
       icon: Sparkles,
-      description: "Continuously expanding knowledge in emerging technologies and best practices.",
+      description: t('skills.learning.description'),
       skills: [
         { name: "AI/ML", icon: Bot },
         { name: "Web3", icon: Baseline },
@@ -104,7 +107,7 @@ const Skills = () => {
     <div className="min-h-screen pt-20 px-6 relative overflow-hidden">
       <BackgroundDecoration />
       <div className="max-w-6xl mx-auto relative">
-        <h1 className="text-3xl font-bold mb-12 text-gradient">My Skills</h1>
+        <h1 className="text-3xl font-bold mb-12 text-gradient">{t('skills.title')}</h1>
         <div className="grid gap-12">
           {skillSections.map((section) => (
             <Card 

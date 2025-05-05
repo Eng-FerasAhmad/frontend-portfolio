@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FileText } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import {
   Card,
   CardContent,
@@ -10,43 +11,45 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const blogPosts = [
-  {
-    id: 1,
-    title: "The Evolution of React: From Class Components to Hooks",
-    description: "Explore the journey of React's component architecture and how hooks have revolutionized state management.",
-    date: "2025-04-20",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-  },
-  {
-    id: 2,
-    title: "Understanding TypeScript: Why Static Typing Matters",
-    description: "Deep dive into TypeScript's type system and how it improves development experience and code quality.",
-    date: "2025-04-18",
-    readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-  },
-  {
-    id: 3,
-    title: "Modern CSS: The Power of Tailwind CSS",
-    description: "Learn how utility-first CSS frameworks are changing the way we style web applications.",
-    date: "2025-04-15",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-  },
-];
-
 const Blog = () => {
+  const { t } = useTranslation();
+
+  const blogPosts = [
+    {
+      id: 1,
+      title: "The Evolution of React: From Class Components to Hooks",
+      description: "Explore the journey of React's component architecture and how hooks have revolutionized state management.",
+      date: "2025-04-20",
+      readTime: "5 min read",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    },
+    {
+      id: 2,
+      title: "Understanding TypeScript: Why Static Typing Matters",
+      description: "Deep dive into TypeScript's type system and how it improves development experience and code quality.",
+      date: "2025-04-18",
+      readTime: "7 min read",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    },
+    {
+      id: 3,
+      title: "Modern CSS: The Power of Tailwind CSS",
+      description: "Learn how utility-first CSS frameworks are changing the way we style web applications.",
+      date: "2025-04-15",
+      readTime: "6 min read",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+    },
+  ];
+
   return (
     <div className="min-h-screen pt-20">
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold mb-4">
-            <span className="text-gradient">Frontend Tech Blog</span>
+            <span className="text-gradient">{t('blog.title')}</span>
           </h1>
           <p className="text-lg text-foreground/80">
-            Exploring modern web development technologies and best practices
+            {t('blog.subtitle')}
           </p>
         </div>
 
@@ -74,7 +77,7 @@ const Blog = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-primary font-medium">Read more →</div>
+                  <div className="text-primary font-medium">{t('blog.readMore')} →</div>
                 </CardContent>
               </Card>
             </Link>

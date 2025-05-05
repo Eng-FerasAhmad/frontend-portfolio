@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { useTranslation } from 'react-i18next';
 
 const blogPosts = [
   {
@@ -148,7 +148,9 @@ const blogPosts = [
 ];
 
 const BlogPost = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
+  
   const post = blogPosts.find(post => post.id === Number(id));
 
   if (!post) {
@@ -194,7 +196,7 @@ const BlogPost = () => {
         <Link to="/blog">
           <Button variant="ghost" className="mb-8">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Blog
+            {t('blog.backToBlog')}
           </Button>
         </Link>
 
