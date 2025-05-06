@@ -17,16 +17,19 @@ interface BlogPost {
   content: string;
 }
 
-// Static blog posts data
-const staticBlogPosts: BlogPost[] = [
-  {
-    id: 1,
-    title: "The Evolution of React: From Class Components to Hooks",
-    description: "Explore the journey of React's component architecture and how hooks have revolutionized state management.",
-    date: "2025-04-20",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-    content: `React has come a long way since its initial release in 2013. One of the most significant changes in React's history was the introduction of Hooks in React 16.8. This feature revolutionized how we write React components and manage state in our applications.
+// Function to get blog post data from markdown files
+const getBlogPostById = (id: number): BlogPost | undefined => {
+  // This is a placeholder for fetching data from markdown files
+  // In a real app, you would load this from the markdown files
+  const posts = [
+    {
+      id: 1,
+      title: "The Evolution of React: From Class Components to Hooks",
+      description: "Explore the journey of React's component architecture and how hooks have revolutionized state management.",
+      date: "2025-04-20",
+      readTime: "5 min read",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      content: `React has come a long way since its initial release in 2013. One of the most significant changes in React's history was the introduction of Hooks in React 16.8. This feature revolutionized how we write React components and manage state in our applications.
 
 ## The Era of Class Components
 
@@ -71,15 +74,15 @@ This new approach brought several benefits:
 ## The Future of React
 
 As React continues to evolve, we're seeing new patterns and best practices emerge. The introduction of features like Suspense, Server Components, and the upcoming React forget show that the library is constantly improving and adapting to modern web development needs.`
-  },
-  {
-    id: 2,
-    title: "Understanding TypeScript: Why Static Typing Matters",
-    description: "Deep dive into TypeScript's type system and how it improves development experience and code quality.",
-    date: "2025-04-18",
-    readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    content: `TypeScript has become an essential tool in modern web development, particularly in large-scale applications. Let's explore why static typing matters and how TypeScript improves code quality.
+    },
+    {
+      id: 2,
+      title: "Understanding TypeScript: Why Static Typing Matters",
+      description: "Deep dive into TypeScript's type system and how it improves development experience and code quality.",
+      date: "2025-04-18",
+      readTime: "7 min read",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      content: `TypeScript has become an essential tool in modern web development, particularly in large-scale applications. Let's explore why static typing matters and how TypeScript improves code quality.
 
 ## Why Static Typing?
 
@@ -116,15 +119,15 @@ function getFirst<T>(array: T[]): T | undefined {
 2. Leverage type inference
 3. Avoid using 'any'
 4. Use interfaces for object shapes`
-  },
-  {
-    id: 3,
-    title: "Modern CSS: The Power of Tailwind CSS",
-    description: "Learn how utility-first CSS frameworks are changing the way we style web applications.",
-    date: "2025-04-15",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-    content: `Tailwind CSS has revolutionized how we approach styling in modern web applications. This utility-first framework provides a different paradigm for writing CSS that many developers have come to love.
+    },
+    {
+      id: 3,
+      title: "Modern CSS: The Power of Tailwind CSS",
+      description: "Learn how utility-first CSS frameworks are changing the way we style web applications.",
+      date: "2025-04-15",
+      readTime: "6 min read",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+      content: `Tailwind CSS has revolutionized how we approach styling in modern web applications. This utility-first framework provides a different paradigm for writing CSS that many developers have come to love.
 
 ## The Utility-First Approach
 
@@ -152,12 +155,10 @@ Instead of writing custom CSS classes, Tailwind provides small, single-purpose u
 - Plugin system
 - JIT compilation
 - Dark mode support`
-  }
-];
-
-// Helper function to get a blog post by ID
-const getBlogPostById = (id: number): BlogPost | undefined => {
-  return staticBlogPosts.find(post => post.id === id);
+    }
+  ];
+  
+  return posts.find(post => post.id === id);
 };
 
 const BlogPost = () => {
