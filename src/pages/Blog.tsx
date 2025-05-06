@@ -10,36 +10,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { getBlogPosts } from '../utils/blog';
 
 const Blog = () => {
   const { t } = useTranslation();
-
-  const blogPosts = [
-    {
-      id: 1,
-      title: "The Evolution of React: From Class Components to Hooks",
-      description: "Explore the journey of React's component architecture and how hooks have revolutionized state management.",
-      date: "2025-04-20",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-    },
-    {
-      id: 2,
-      title: "Understanding TypeScript: Why Static Typing Matters",
-      description: "Deep dive into TypeScript's type system and how it improves development experience and code quality.",
-      date: "2025-04-18",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    },
-    {
-      id: 3,
-      title: "Modern CSS: The Power of Tailwind CSS",
-      description: "Learn how utility-first CSS frameworks are changing the way we style web applications.",
-      date: "2025-04-15",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-    },
-  ];
+  const blogPosts = getBlogPosts();
 
   return (
     <div className="min-h-screen pt-20">
