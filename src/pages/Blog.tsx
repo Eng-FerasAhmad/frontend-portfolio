@@ -21,7 +21,7 @@ const Blog = () => {
     // Since getBlogPosts returns a Promise, we need to handle it properly
     const loadPosts = async () => {
       try {
-        const blogPosts = await getBlogPosts();
+        const blogPosts = getBlogPosts();
         setPosts(blogPosts);
       } catch (error) {
         console.error("Error loading blog posts:", error);
