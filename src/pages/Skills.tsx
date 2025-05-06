@@ -22,18 +22,18 @@ const Skills = () => {
       icon: BrainCircuit,
       description: t('skills.developer.description'),
       skills: [
-        { name: "React", icon: Code2, description: "Building scalable frontend applications with React and its ecosystem" },
-        { name: "Vue", icon: Component, description: "Developing interactive web applications with Vue.js" },
-        { name: "Angular", icon: Activity, description: "Creating enterprise-level applications with Angular framework" },
-        { name: "TypeScript", icon: FileCode, description: "Writing type-safe JavaScript code with TypeScript" },
-        { name: "JavaScript", icon: Code2, description: "Core JavaScript development and ES6+ features" },
-        { name: "Node.js", icon: Server, description: "Server-side JavaScript runtime development" },
-        { name: "Redux", icon: Diamond, description: "State management for React applications" },
-        { name: "Vuex", icon: AppWindow, description: "State management pattern for Vue.js applications" },
-        { name: "Git", icon: GitBranch, description: "Version control and collaboration using Git" },
-        { name: "Scrum", icon: Target, description: "Agile project management with Scrum methodology" },
-        { name: "Kanban", icon: Blocks, description: "Visual project management using Kanban boards" },
-        { name: "Sentry", icon: Eye, description: "Error tracking and performance monitoring" }
+        { name: "React", icon: Code2, description: t('skills.developer.items.react') },
+        { name: "Vue", icon: Component, description: t('skills.developer.items.vue') },
+        { name: "Angular", icon: Activity, description: t('skills.developer.items.angular') },
+        { name: "TypeScript", icon: FileCode, description: t('skills.developer.items.typescript') },
+        { name: "JavaScript", icon: Code2, description: t('skills.developer.items.javascript') },
+        { name: "Node.js", icon: Server, description: t('skills.developer.items.nodejs') },
+        { name: "Redux", icon: Diamond, description: t('skills.developer.items.redux') },
+        { name: "Vuex", icon: AppWindow, description: t('skills.developer.items.vuex') },
+        { name: "Git", icon: GitBranch, description: t('skills.developer.items.git') },
+        { name: "Scrum", icon: Target, description: t('skills.developer.items.scrum') },
+        { name: "Kanban", icon: Blocks, description: t('skills.developer.items.kanban') },
+        { name: "Sentry", icon: Eye, description: t('skills.developer.items.sentry') }
       ]
     },
     {
@@ -41,12 +41,12 @@ const Skills = () => {
       icon: Palette,
       description: t('skills.design.description'),
       skills: [
-        { name: "UI/UX Design", icon: Paintbrush },
-        { name: "Figma", icon: Figma },
-        { name: "Responsive Design", icon: Smartphone },
-        { name: "CSS/SCSS", icon: Brush },
-        { name: "Tailwind CSS", icon: Waves },
-        { name: "Design Systems", icon: PenTool }
+        { name: "UI/UX Design", icon: Paintbrush, description: t('skills.design.items.uiux') },
+        { name: "Figma", icon: Figma, description: t('skills.design.items.figma') },
+        { name: "Responsive Design", icon: Smartphone, description: t('skills.design.items.responsive') },
+        { name: "CSS/SCSS", icon: Brush, description: t('skills.design.items.css') },
+        { name: "Tailwind CSS", icon: Waves, description: t('skills.design.items.tailwind') },
+        { name: "Design Systems", icon: PenTool, description: t('skills.design.items.designSystems') }
       ]
     },
     {
@@ -54,12 +54,12 @@ const Skills = () => {
       icon: Wrench,
       description: t('skills.build.description'),
       skills: [
-        { name: "Docker", icon: Container },
-        { name: "CI/CD", icon: GitBranch },
-        { name: "AWS", icon: Cloud },
-        { name: "Webpack", icon: Package },
-        { name: "Vite", icon: Zap },
-        { name: "Git", icon: Gift }
+        { name: "Docker", icon: Container, description: t('skills.build.items.docker') },
+        { name: "CI/CD", icon: GitBranch, description: t('skills.build.items.cicd') },
+        { name: "AWS", icon: Cloud, description: t('skills.build.items.aws') },
+        { name: "Webpack", icon: Package, description: t('skills.build.items.webpack') },
+        { name: "Vite", icon: Zap, description: t('skills.build.items.vite') },
+        { name: "Git", icon: Gift, description: t('skills.build.items.git') }
       ]
     },
     {
@@ -67,12 +67,12 @@ const Skills = () => {
       icon: Beaker,
       description: t('skills.testing.description'),
       skills: [
-        { name: "Jest", icon: TestTube },
-        { name: "React Testing Library", icon: Waypoints },
-        { name: "Cypress", icon: Target },
-        { name: "Unit Testing", icon: Blocks },
-        { name: "E2E Testing", icon: Diamond },
-        { name: "TDD", icon: ClipboardCheck }
+        { name: "Jest", icon: TestTube, description: t('skills.testing.items.jest') },
+        { name: "React Testing Library", icon: Waypoints, description: t('skills.testing.items.rtl') },
+        { name: "Cypress", icon: Target, description: t('skills.testing.items.cypress') },
+        { name: "Unit Testing", icon: Blocks, description: t('skills.testing.items.unit') },
+        { name: "E2E Testing", icon: Diamond, description: t('skills.testing.items.e2e') },
+        { name: "TDD", icon: ClipboardCheck, description: t('skills.testing.items.tdd') }
       ]
     },
     {
@@ -80,12 +80,12 @@ const Skills = () => {
       icon: GraduationCap,
       description: t('skills.trainer.description'),
       skills: [
-        { name: "Technical Workshops", icon: Users },
-        { name: "Code Reviews", icon: Eye },
-        { name: "Mentoring", icon: HandHelping },
-        { name: "Documentation", icon: BookOpen },
-        { name: "Team Leadership", icon: UserRound },
-        { name: "Agile Practices", icon: Workflow }
+        { name: "Technical Workshops", icon: Users, description: t('skills.trainer.items.workshops') },
+        { name: "Code Reviews", icon: Eye, description: t('skills.trainer.items.codeReviews') },
+        { name: "Mentoring", icon: HandHelping, description: t('skills.trainer.items.mentoring') },
+        { name: "Documentation", icon: BookOpen, description: t('skills.trainer.items.documentation') },
+        { name: "Team Leadership", icon: UserRound, description: t('skills.trainer.items.leadership') },
+        { name: "Agile Practices", icon: Workflow, description: t('skills.trainer.items.agile') }
       ]
     },
     {
@@ -93,12 +93,12 @@ const Skills = () => {
       icon: Sparkles,
       description: t('skills.learning.description'),
       skills: [
-        { name: "AI/ML", icon: Bot },
-        { name: "Web3", icon: Baseline },
-        { name: "Cloud Architecture", icon: Network },
-        { name: "Mobile Development", icon: AppWindow },
-        { name: "System Design", icon: Component },
-        { name: "Performance Optimization", icon: Gauge }
+        { name: "AI/ML", icon: Bot, description: t('skills.learning.items.ai') },
+        { name: "Web3", icon: Baseline, description: t('skills.learning.items.web3') },
+        { name: "Cloud Architecture", icon: Network, description: t('skills.learning.items.cloud') },
+        { name: "Mobile Development", icon: AppWindow, description: t('skills.learning.items.mobile') },
+        { name: "System Design", icon: Component, description: t('skills.learning.items.systemDesign') },
+        { name: "Performance Optimization", icon: Gauge, description: t('skills.learning.items.performance') }
       ]
     }
   ];
@@ -160,3 +160,4 @@ const Skills = () => {
 };
 
 export default Skills;
+

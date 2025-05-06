@@ -84,27 +84,81 @@
     "title": "Meine Fähigkeiten",
     "developer": {
       "title": "Entwickler",
-      "description": "Erfahrung in moderner Webentwicklung mit Fokus auf Frontend-Technologien und responsive Design."
+      "description": "Erfahrung in moderner Webentwicklung mit Fokus auf Frontend-Technologien und responsive Design.",
+      "items": {
+        "react": "Entwicklung skalierbarer Frontend-Anwendungen mit React und seinem Ökosystem",
+        "vue": "Entwicklung interaktiver Webanwendungen mit Vue.js",
+        "angular": "Erstellung von Enterprise-Anwendungen mit Angular Framework",
+        "typescript": "Erstellung typsicheren JavaScripts mit TypeScript",
+        "javascript": "Core JavaScript-Entwicklung und ES6+ Features",
+        "nodejs": "Server-seitige JavaScript-Runtime-Entwicklung",
+        "redux": "State Management für React-Anwendungen",
+        "vuex": "State Management Pattern für Vue.js-Anwendungen",
+        "git": "Versionskontrolle und Zusammenarbeit mit Git",
+        "scrum": "Agiles Projektmanagement mit Scrum-Methodik",
+        "kanban": "Visuelles Projektmanagement mit Kanban-Boards",
+        "sentry": "Fehlertracking und Performance-Überwachung"
+      }
     },
     "design": {
       "title": "Design",
-      "description": "Erstellung schöner und intuitiver Benutzeroberflächen mit modernen Design-Prinzipien und Tools."
+      "description": "Erstellung schöner und intuitiver Benutzeroberflächen mit modernen Design-Prinzipien und Tools.",
+      "items": {
+        "uiux": "Erstellung benutzerzentrierter Designs mit Fokus auf Benutzerfreundlichkeit",
+        "figma": "Design und Prototyping von Schnittstellen mit Figma",
+        "responsive": "Erstellung von Layouts, die sich an jede Bildschirmgröße anpassen",
+        "css": "Styling mit CSS und SCSS-Präprozessoren",
+        "tailwind": "Verwendung von Utility-First CSS für schnelle UI-Entwicklung",
+        "designSystems": "Erstellung konsistenter Design-Muster und Komponenten"
+      }
     },
     "build": {
       "title": "Entwicklung",
-      "description": "Expertise in DevOps und Deployment-Tools zur Erstellung skalierbarer Anwendungen."
+      "description": "Expertise in DevOps und Deployment-Tools zur Erstellung skalierbarer Anwendungen.",
+      "items": {
+        "docker": "Containerisierung von Anwendungen für konsistente Umgebungen",
+        "cicd": "Automatisierung von Test- und Deployment-Pipelines",
+        "aws": "Cloud-Infrastruktur und serverlose Architektur",
+        "webpack": "Modul-Bündelung und Asset-Optimierung",
+        "vite": "Frontend-Tooling und Entwicklung der nächsten Generation",
+        "git": "Versionskontrolle und gemeinsame Entwicklung"
+      }
     },
     "testing": {
       "title": "Testing",
-      "description": "Sicherstellung der Codequalität durch umfassende Testmethoden."
+      "description": "Sicherstellung der Codequalität durch umfassende Testmethoden.",
+      "items": {
+        "jest": "JavaScript-Testing mit Snapshot-Funktionen",
+        "rtl": "Testen von Benutzeroberflächen wie Benutzer damit interagieren",
+        "cypress": "End-to-End-Tests für Webanwendungen",
+        "unit": "Testen einzelner Funktionen und Komponenten",
+        "e2e": "Testen vollständiger Benutzerabläufe und Szenarien",
+        "tdd": "Entwicklung gesteuert durch Tests und Anforderungen"
+      }
     },
     "trainer": {
       "title": "Trainer",
-      "description": "Leidenschaftlich darin, Wissen zu teilen und anderen zu helfen, auf ihrem technischen Weg zu wachsen."
+      "description": "Leidenschaftlich darin, Wissen zu teilen und anderen zu helfen, auf ihrem technischen Weg zu wachsen.",
+      "items": {
+        "workshops": "Durchführung praktischer Lernerfahrungen",
+        "codeReviews": "Konstruktives Feedback zur Codequalität",
+        "mentoring": "Anleitung von Entwicklern zur Verbesserung ihrer Fähigkeiten",
+        "documentation": "Erstellung klarer Anleitungen und technischer Dokumentation",
+        "leadership": "Führung technischer Teams zum Erfolg",
+        "agile": "Implementierung agiler Methodologien in Teams"
+      }
     },
     "learning": {
       "title": "Lernen",
-      "description": "Kontinuierliche Erweiterung des Wissens in aufkommenden Technologien und Best Practices."
+      "description": "Kontinuierliche Erweiterung des Wissens in aufkommenden Technologien und Best Practices.",
+      "items": {
+        "ai": "Erforschung künstlicher Intelligenz und maschinellen Lernens",
+        "web3": "Lernen über Blockchain und dezentralisierte Anwendungen",
+        "cloud": "Design skalierbarer Cloud-Infrastruktur",
+        "mobile": "Erstellung plattformübergreifender mobiler Erfahrungen",
+        "systemDesign": "Architektur robuster und skalierbarer Systeme",
+        "performance": "Optimierung von Anwendungen für Geschwindigkeit und Effizienz"
+      }
     }
   }
 }
