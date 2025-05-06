@@ -1,8 +1,4 @@
 
-import { promises as fs } from 'fs';
-import matter from 'gray-matter';
-import path from 'path';
-
 export interface BlogPost {
   id: number;
   title: string;
@@ -23,15 +19,9 @@ export interface BlogPostFrontMatter {
   image: string;
 }
 
-// Function to load blog posts from the content directory
-export async function getBlogPosts(): Promise<BlogPost[]> {
-  try {
-    // In a browser environment, return the static blog posts
-    return staticBlogPosts;
-  } catch (error) {
-    console.error('Error loading blog posts:', error);
-    return [];
-  }
+// Function to get all blog posts - no need for async here since we're using static data
+export function getBlogPosts(): BlogPost[] {
+  return staticBlogPosts;
 }
 
 // Function to get a specific blog post by ID

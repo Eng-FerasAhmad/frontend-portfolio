@@ -21,9 +21,9 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
           ol: ({ node, ...props }) => <ol className="list-decimal pl-6 my-4" {...props} />,
           li: ({ node, ...props }) => <li className="mb-1" {...props} />,
           a: ({ node, ...props }) => <a className="text-primary hover:underline" {...props} />,
-          code: ({ node, inline, className, children, ...props }) => {
+          code: ({ className, children, ...props }) => {
             const match = /language-(\w+)/.exec(className || '');
-            return !inline ? (
+            return !props.node?.position ? (
               <div className="my-6">
                 {match && (
                   <div className="bg-[#1A1F2C] text-white px-4 py-2 text-sm rounded-t-lg border-b border-white/10">

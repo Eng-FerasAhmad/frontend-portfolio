@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FileText } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -10,11 +10,38 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { getBlogPosts } from '../utils/blog';
+import { getBlogPosts, BlogPost } from '../utils/blog';
 
 const Blog = () => {
   const { t } = useTranslation();
-  const blogPosts = getBlogPosts();
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Since getBlogPosts returns a Promise, we need to handle it properly
+    const loadPosts = async () => {
+      try {
+        const blogPosts = await getBlogPosts();
+        setPosts(blogPosts);
+      } catch (error) {
+        console.error("Error loading blog posts:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadPosts();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen pt-20">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <p>Loading blog posts...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen pt-20">
@@ -29,7 +56,7 @@ const Blog = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
+          {posts.map((post) => (
             <Link to={`/blog/${post.id}`} key={post.id} className="transition-transform hover:-translate-y-1">
               <Card className="h-full overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="aspect-video relative overflow-hidden">
