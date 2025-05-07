@@ -1,189 +1,20 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FileText } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import MarkdownRenderer from '../components/MarkdownRenderer';
-
-// Interface for blog post data
-interface BlogPost {
-  id: number;
-  title: string;
-  description: string;
-  date: string;
-  readTime: string;
-  image: string;
-  content: string;
-}
-
-// Mock blog posts to use instead of gray-matter (which requires Node.js Buffer)
-const mockBlogPosts: BlogPost[] = [
-  {
-    id: 1,
-    title: "The Evolution of React: From Class Components to Hooks",
-    description: "Explore the journey of React's component architecture and how hooks have revolutionized state management.",
-    date: "2025-04-20",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-    content: `
-React has come a long way since its initial release in 2013. One of the most significant changes in React's history was the introduction of Hooks in React 16.8. This feature revolutionized how we write React components and manage state in our applications.
-
-## The Era of Class Components
-
-Before Hooks, class components were the primary way to handle state and lifecycle methods in React. A typical class component looked something like this:
-
-\`\`\`jsx
-class MyComponent extends React.Component {
-  state = { count: 0 };
-  
-  componentDidMount() {
-    // Lifecycle method
-  }
-
-  render() {
-    return <div>{this.state.count}</div>;
-  }
-}
-\`\`\`
-
-## Enter Hooks
-
-Hooks introduced a more intuitive way to handle state and side effects in functional components:
-
-\`\`\`jsx
-function MyComponent() {
-  const [count, setCount] = useState(0);
-  
-  useEffect(() => {
-    // Side effects here
-  }, []);
-
-  return <div>{count}</div>;
-}
-\`\`\`
-
-This new approach brought several benefits:
-- Simpler component logic
-- Reusable stateful logic
-- Better composition
-- Reduced bundle size
-
-## The Future of React
-
-As React continues to evolve, we're seeing new patterns and best practices emerge. The introduction of features like Suspense, Server Components, and the upcoming React forget show that the library is constantly improving and adapting to modern web development needs.
-    `
-  },
-  {
-    id: 2,
-    title: "Understanding TypeScript: Why Static Typing Matters",
-    description: "Deep dive into TypeScript's type system and how it improves development experience and code quality.",
-    date: "2025-04-18",
-    readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    content: `
-TypeScript has become an essential tool in modern web development, particularly in large-scale applications. Let's explore why static typing matters and how TypeScript improves code quality.
-
-## Why Static Typing?
-
-Static typing provides several benefits:
-- Early error detection
-- Better IDE support
-- Improved code documentation
-- Safer refactoring
-
-## Key TypeScript Features
-
-TypeScript introduces many powerful features:
-
-\`\`\`typescript
-// Interface definition
-interface User {
-  id: number;
-  name: string;
-  email?: string;
-}
-
-// Type inference
-const users: User[] = [];
-
-// Generics
-function getFirst<T>(array: T[]): T | undefined {
-  return array[0];
-}
-\`\`\`
-
-## Best Practices
-
-1. Use strict mode
-2. Leverage type inference
-3. Avoid using 'any'
-4. Use interfaces for object shapes
-    `
-  },
-  {
-    id: 3,
-    title: "Modern CSS: The Power of Tailwind CSS",
-    description: "Learn how utility-first CSS frameworks are changing the way we style web applications.",
-    date: "2025-04-15",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-    content: `
-Tailwind CSS has revolutionized how we approach styling in modern web applications. This utility-first framework provides a different paradigm for writing CSS that many developers have come to love.
-
-## The Utility-First Approach
-
-Instead of writing custom CSS classes, Tailwind provides small, single-purpose utility classes:
-
-\`\`\`html
-<div class="flex items-center justify-between p-4 bg-white shadow-lg rounded-lg">
-  <h2 class="text-xl font-bold text-gray-800">Hello Tailwind</h2>
-  <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-    Click me
-  </button>
-</div>
-\`\`\`
-
-## Benefits of Tailwind
-
-1. Rapid prototyping
-2. Consistent styling
-3. Lower CSS bundle size
-4. Better maintainability
-
-## Advanced Features
-
-- Custom configurations
-- Plugin system
-- JIT compilation
-- Dark mode support
-    `
-  }
-];
+import { useBlogPosts } from '../utils/markdownUtils';
 
 const Blog = () => {
   const { t } = useTranslation();
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Instead of trying to parse markdown files which requires Node.js Buffer
-    // we'll use our mock data directly
-    setPosts(mockBlogPosts);
-    setLoading(false);
-  }, []);
+  const { posts, loading } = useBlogPosts();
 
   if (loading) {
     return (
       <div className="min-h-screen pt-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <p>Loading blog posts...</p>
+          <p>Loading blog posts from markdown files...</p>
         </div>
       </div>
     );
@@ -193,7 +24,7 @@ const Blog = () => {
     return (
       <div className="min-h-screen pt-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <p>No blog posts found.</p>
+          <p>No blog posts found. Check console for any loading errors.</p>
         </div>
       </div>
     );
@@ -240,7 +71,7 @@ const Blog = () => {
                   
                   <div className="mb-4 max-h-60 overflow-hidden relative">
                     <div className="prose prose-sm dark:prose-invert">
-                      <MarkdownRenderer content={post.content} />
+                      <MarkdownRenderer content={post.content.slice(0, 500) + '...'} />
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent"></div>
                   </div>
