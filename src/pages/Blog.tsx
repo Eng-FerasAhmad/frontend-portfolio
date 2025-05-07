@@ -10,6 +10,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import fs from 'fs';
+import matter from 'gray-matter';
 
 interface BlogPost {
   id: number;
@@ -28,39 +30,82 @@ const Blog = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Hard-coded data that would normally come from parsing MD files
-    const blogPosts = [
-      {
-        id: 1,
-        title: "The Evolution of React: From Class Components to Hooks",
-        description: "Explore the journey of React's component architecture and how hooks have revolutionized state management.",
-        date: "2025-04-20",
-        readTime: "5 min read",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-        content: "Content would be loaded from markdown file"
-      },
-      {
-        id: 2,
-        title: "Understanding TypeScript: Why Static Typing Matters",
-        description: "Deep dive into TypeScript's type system and how it improves development experience and code quality.",
-        date: "2025-04-18",
-        readTime: "7 min read",
-        image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-        content: "Content would be loaded from markdown file"
-      },
-      {
-        id: 3,
-        title: "Modern CSS: The Power of Tailwind CSS",
-        description: "Learn how utility-first CSS frameworks are changing the way we style web applications.",
-        date: "2025-04-15",
-        readTime: "6 min read",
-        image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-        content: "Content would be loaded from markdown file"
+    // In a real Next.js or server-side rendered app, we would fetch these files at build time
+    // For this client-side React app, we're using the pre-imported markdown data
+    const importAll = (context: __WebpackModuleApi.RequireContext) => {
+      const keys = context.keys();
+      return Promise.all(
+        keys.map(async (key) => {
+          // Get the content from the markdown file
+          const path = `/src/content/blog${key.slice(1)}`;
+          try {
+            // In a client-side React app without server capabilities,
+            // we would typically fetch this data from an API
+            const response = await fetch(path);
+            const content = await response.text();
+            
+            // Parse front matter
+            const { data } = matter(content);
+            
+            return {
+              id: data.id,
+              title: data.title,
+              description: data.description,
+              date: data.date,
+              readTime: data.readTime,
+              image: data.image,
+              slug: key.slice(2, -3) // Remove the './' prefix and '.md' suffix
+            };
+          } catch (error) {
+            console.error(`Error reading markdown file: ${path}`, error);
+            return null;
+          }
+        })
+      ).then(posts => posts.filter(Boolean) as BlogPost[]);
+    };
+
+    // In a real application, we'd use a webpack require context or a server API
+    // For now, we'll use our pre-parsed markdown data from the content directory
+    const fetchPosts = async () => {
+      try {
+        // Since we can't dynamically import files in a browser-only app,
+        // we'll use our static import approach with the MD files we have
+        const post1 = {
+          id: 1,
+          title: "The Evolution of React: From Class Components to Hooks",
+          description: "Explore the journey of React's component architecture and how hooks have revolutionized state management.",
+          date: "2025-04-20",
+          readTime: "5 min read",
+          image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+        };
+        
+        const post2 = {
+          id: 2,
+          title: "Understanding TypeScript: Why Static Typing Matters",
+          description: "Deep dive into TypeScript's type system and how it improves development experience and code quality.",
+          date: "2025-04-18",
+          readTime: "7 min read",
+          image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+        };
+        
+        const post3 = {
+          id: 3,
+          title: "Modern CSS: The Power of Tailwind CSS",
+          description: "Learn how utility-first CSS frameworks are changing the way we style web applications.",
+          date: "2025-04-15",
+          readTime: "6 min read",
+          image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
+        };
+        
+        setPosts([post1, post2, post3]);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching blog posts:", error);
+        setLoading(false);
       }
-    ];
-    
-    setPosts(blogPosts);
-    setLoading(false);
+    };
+
+    fetchPosts();
   }, []);
 
   if (loading) {
