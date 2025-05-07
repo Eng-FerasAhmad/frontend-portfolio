@@ -14,7 +14,7 @@ const Blog = () => {
     return (
       <div className="min-h-screen pt-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <p>Loading blog posts from markdown files...</p>
+          <p>Loading blog posts...</p>
         </div>
       </div>
     );

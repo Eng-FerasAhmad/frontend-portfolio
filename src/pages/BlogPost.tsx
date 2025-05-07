@@ -16,7 +16,7 @@ const BlogPost = () => {
     return (
       <div className="min-h-screen pt-20">
         <div className="max-w-4xl mx-auto px-6">
-          <p>Loading post from markdown file...</p>
+          <p>Loading post...</p>
         </div>
       </div>
     );
@@ -27,7 +27,7 @@ const BlogPost = () => {
       <div className="min-h-screen pt-20">
         <div className="max-w-4xl mx-auto px-6">
           <h1>Post not found</h1>
-          <p>Could not load the markdown file for this post.</p>
+          <p>Could not load the blog post.</p>
           <Link to="/blog">
             <Button variant="ghost" className="mt-4">
               <ArrowLeft className="mr-2 h-4 w-4" />
