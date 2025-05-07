@@ -5,6 +5,7 @@ import { ArrowLeft } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { useTranslation } from 'react-i18next';
 import MarkdownRenderer from '../components/MarkdownRenderer';
+import matter from 'gray-matter';
 
 // Interface for blog post data
 interface BlogPost {
@@ -39,37 +40,22 @@ const BlogPost = () => {
           return;
         }
         
-        // In a real app, you'd fetch this from an API endpoint
-        // For this client-side app, we'll make a fetch request to the markdown file
+        // Fetch the markdown file
         const response = await fetch(postFiles[postId]);
         const markdownContent = await response.text();
         
-        // Extract frontmatter and content
-        // In a real app, we'd use gray-matter library
-        const frontmatterRegex = /^---\s*([\s\S]*?)\s*---/;
-        const match = markdownContent.match(frontmatterRegex);
+        // Parse front matter using gray-matter
+        const { data, content } = matter(markdownContent);
         
-        if (match) {
-          const frontMatter = match[1];
-          const content = markdownContent.slice(match[0].length).trim();
-          
-          // Basic frontmatter parsing (this is simplified)
-          const title = frontMatter.match(/title:\s*"([^"]+)"/)?.[1] || '';
-          const description = frontMatter.match(/description:\s*"([^"]+)"/)?.[1] || '';
-          const date = frontMatter.match(/date:\s*"([^"]+)"/)?.[1] || '';
-          const readTime = frontMatter.match(/readTime:\s*"([^"]+)"/)?.[1] || '';
-          const image = frontMatter.match(/image:\s*"([^"]+)"/)?.[1] || '';
-          
-          setPost({
-            id: postId,
-            title,
-            description,
-            date,
-            readTime,
-            image,
-            content
-          });
-        }
+        setPost({
+          id: postId,
+          title: data.title || '',
+          description: data.description || '',
+          date: data.date || '',
+          readTime: data.readTime || '',
+          image: data.image || '',
+          content: content || ''
+        });
       } catch (error) {
         console.error('Error fetching blog post:', error);
       } finally {
