@@ -14,6 +14,8 @@ export interface BlogPost {
 // Direct import of the markdown content
 // This tells Vite to include these files in the build
 import post1Content from '../content/blog/post1.md?raw';
+import post2Content from '../content/blog/post2.md?raw';
+import post3Content from '../content/blog/post3.md?raw';
 
 // Helper function to parse markdown frontmatter and content
 const parseMarkdown = (markdownText: string): BlogPost | null => {
@@ -56,11 +58,11 @@ const parseMarkdown = (markdownText: string): BlogPost | null => {
   }
 };
 
-// Hard-coded blog posts for now
-// In a real app, you'd have a more sophisticated approach to load these
+// Load all blog posts
 const blogPosts: BlogPost[] = [
-  parseMarkdown(post1Content) as BlogPost,
-  // Add more posts if you have them
+  parseMarkdown(post1Content),
+  parseMarkdown(post2Content),
+  parseMarkdown(post3Content),
 ].filter(Boolean) as BlogPost[];
 
 export const useBlogPosts = () => {

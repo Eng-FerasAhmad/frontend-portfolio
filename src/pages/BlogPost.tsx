@@ -50,7 +50,7 @@ const BlogPost = () => {
         </Link>
 
         <div className="space-y-8">
-          <div className="aspect-video relative overflow-hidden rounded-lg">
+          <div className="aspect-video relative overflow-hidden rounded-lg shadow-lg">
             <img 
               src={post.image}
               alt={post.title}
@@ -69,7 +69,9 @@ const BlogPost = () => {
             <p className="text-xl text-foreground/80">{post.description}</p>
           </div>
 
-          <MarkdownRenderer content={post.content} />
+          <div className="markdown-content">
+            <MarkdownRenderer content={post.content} />
+          </div>
         </div>
       </div>
     </div>
